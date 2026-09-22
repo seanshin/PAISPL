@@ -1,0 +1,27 @@
+{
+  "version": "0.4.0",
+  "proposal_id": "CP-M4-005",
+  "request_id": "UML-CASE-005",
+  "base_configuration_id": "GOLD-CHG-HOSP-002",
+  "base_architecture_hash": "37ba19ad2b794ebe7144e4c8ff3f220d9b3dabae7245793394b676be37223f28",
+  "origin_uml": {
+    "model_id": "UML-ARCH-CHG-HOSP-002",
+    "model_path": "paispl-m2/generated/CHG-HOSP-002.component.puml",
+    "element_ids": ["CMP-DICOM-GW", "CMP-FHIR"]
+  },
+  "edit_type": "dependency",
+  "rationale": "DICOM Gateway에서 FHIR Gateway로 새 의존성을 그린다.",
+  "operations": [
+    {
+      "operation_id": "CPO-001",
+      "kind": "add_dependency",
+      "source_id": "CMP-DICOM-GW",
+      "target_id": "CMP-FHIR",
+      "source_quote": "DICOM Gateway가 FHIR Gateway를 호출한다."
+    }
+  ],
+  "proposer": {"id": "M4-FIXTURE-AUTHOR", "type": "test_fixture"},
+  "created_at": "2026-09-22T01:04:00Z",
+  "status": "DRAFT",
+  "required_approval_policy": "human-explicit-v1"
+}

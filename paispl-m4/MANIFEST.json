@@ -1,0 +1,13 @@
+{
+  "contains": [
+    "M4 UML round-trip change controller and evidence",
+    "M3 incremental artifact factory snapshot",
+    "M2 architecture synthesizer snapshot",
+    "M1 Requirement IR and Solver snapshot",
+    "Sprint 0 design baseline snapshot"
+  ],
+  "file_count": 368,
+  "milestone": "M4",
+  "package": "PAISPL_M4_UML_Roundtrip_Controller_v0.4.0.zip",
+  "version": "0.4.0"
+}

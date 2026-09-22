@@ -1,0 +1,15 @@
+policy_version: 0.2.0
+
+# A newly activated component forces review of runtime contracts it consumes.
+activation_dependency_kinds: [api, event, policy]
+ignored_dependency_kinds: [deployment]
+
+# Domain coupling that is semantic rather than a direct component dependency.
+feature_propagation:
+  on_premise_deployment: [CMP-POLICY]
+  local_model: [CMP-POLICY]
+  abac: [CMP-POLICY, CMP-AUDIT]
+  lis_integration: [CMP-EMR, CMP-AUDIT]
+
+always_include_tests: [AT-UML-001, AT-UML-002, AT-TRACE-001]
+

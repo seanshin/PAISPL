@@ -1,0 +1,9 @@
+{
+  "project": "PAISPL",
+  "version": "0.4.0",
+  "project_state": "Sprint 0 through M4 completed and quality-gated",
+  "repository": "https://github.com/seanshin/PAISPL",
+  "quality_report": "paispl-m4/QUALITY_GATE_REPORT.json",
+  "reproducible_package": "PAISPL_M4_UML_Roundtrip_Controller_v0.4.0.zip",
+  "next_milestone": "M5 natural-language intent compiler and ambiguity calibration"
+}

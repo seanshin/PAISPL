@@ -1,0 +1,15 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "edge_gateway",
+    "kubernetes",
+    "on_premise_deployment",
+    "phi_encryption",
+    "secret_manager"
+  ],
+  "id": "DEPLOY-MANIFEST",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-DEPLOYMENT",
+  "protocolFamily": "deployment"
+}

@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "request_id": "REQ-HOSP-001",
+  "domain": "healthcare-platform",
+  "source_text": "200병상 병원이 클라우드 EMR을 사용한다. 인증은 Passwordless와 MFA를 지원하고 Zero Trust 정책을 적용한다. PACS와 MRI 및 CT의 DICOM 연동, 의료 AI Agent와 AI 판독, 감사 로그가 필요하다. 환자용 모바일 앱은 제외하고 하이브리드 Kubernetes로 배포한다.",
+  "base_configuration_id": null,
+  "intents": [
+    {"id":"INT-001","operation":"include","subject":"Passwordless","feature_candidates":[{"feature_id":"passwordless","score":0.99}],"confidence":0.99,"source_quote":"Passwordless와 MFA"},
+    {"id":"INT-002","operation":"include","subject":"MFA","feature_candidates":[{"feature_id":"mfa","score":0.99}],"confidence":0.99,"source_quote":"Passwordless와 MFA"},
+    {"id":"INT-003","operation":"include","subject":"Zero Trust","feature_candidates":[{"feature_id":"zero_trust","score":0.98}],"confidence":0.98,"source_quote":"Zero Trust 정책"},
+    {"id":"INT-004","operation":"include","subject":"EMR 연계","feature_candidates":[{"feature_id":"emr_integration","score":0.93}],"confidence":0.93,"source_quote":"클라우드 EMR을 사용"},
+    {"id":"INT-005","operation":"include","subject":"PACS","feature_candidates":[{"feature_id":"pacs_integration","score":0.99}],"confidence":0.99,"source_quote":"PACS와 MRI 및 CT"},
+    {"id":"INT-006","operation":"include","subject":"MRI 연계","feature_candidates":[{"feature_id":"mri_adapter","score":0.99}],"confidence":0.99,"source_quote":"MRI 및 CT의 DICOM 연동"},
+    {"id":"INT-007","operation":"include","subject":"CT 연계","feature_candidates":[{"feature_id":"ct_adapter","score":0.99}],"confidence":0.99,"source_quote":"MRI 및 CT의 DICOM 연동"},
+    {"id":"INT-008","operation":"include","subject":"의료 AI Agent","feature_candidates":[{"feature_id":"clinical_ai_agent","score":0.98}],"confidence":0.98,"source_quote":"의료 AI Agent와 AI 판독"},
+    {"id":"INT-009","operation":"include","subject":"AI 판독","feature_candidates":[{"feature_id":"ai_diagnosis","score":0.98}],"confidence":0.98,"source_quote":"AI 판독"},
+    {"id":"INT-010","operation":"exclude","subject":"환자 모바일","feature_candidates":[{"feature_id":"patient_mobile","score":0.99}],"confidence":0.99,"source_quote":"환자용 모바일 앱은 제외"},
+    {"id":"INT-011","operation":"include","subject":"하이브리드 배포","feature_candidates":[{"feature_id":"hybrid_deployment","score":0.98}],"confidence":0.98,"source_quote":"하이브리드 Kubernetes로 배포"},
+    {"id":"INT-012","operation":"include","subject":"Kubernetes","feature_candidates":[{"feature_id":"kubernetes","score":0.99}],"confidence":0.99,"source_quote":"Kubernetes로 배포"}
+  ],
+  "functional_requirements": [
+    {"id":"FR-001","statement":"사용자는 Passwordless와 MFA로 인증한다.","priority":"must","acceptance_test_ids":["AT-AUTH-001","AT-AUTH-002"]},
+    {"id":"FR-002","statement":"MRI와 CT 영상은 DICOM Gateway를 통해 PACS와 연계된다.","priority":"must","acceptance_test_ids":["AT-IMG-001","AT-IMG-002"]},
+    {"id":"FR-003","statement":"의료 AI Agent가 AI 판독 기능을 제공한다.","priority":"must","acceptance_test_ids":["AT-AI-001","AT-AI-002"]},
+    {"id":"FR-004","statement":"FHIR API가 EMR 연계를 제공한다.","priority":"must","acceptance_test_ids":["AT-EMR-001"]}
+  ],
+  "non_functional_requirements": [
+    {"id":"NFR-001","category":"security","statement":"모든 보호 자원은 Zero Trust 정책을 적용한다.","measure":"MFA와 Network Policy가 활성화되어야 한다."},
+    {"id":"NFR-002","category":"auditability","statement":"AI 및 임상 데이터 접근을 감사한다.","measure":"필수 이벤트 100퍼센트에 correlation id가 있어야 한다."},
+    {"id":"NFR-003","category":"privacy","statement":"PHI는 저장과 전송 중 암호화한다.","measure":"암호화 정책 검사가 모두 통과해야 한다."}
+  ],
+  "constraints": [
+    {"id":"RC-001","kind":"feature","expression":"patient_mobile = false","hard":true},
+    {"id":"RC-002","kind":"deployment","expression":"deployment = hybrid","hard":true},
+    {"id":"RC-003","kind":"policy","expression":"zero_trust = true","hard":true}
+  ],
+  "deployment": {"profile":"hybrid","runtime":"kubernetes"},
+  "data_classes": ["PHI","personal","credential","model_output"],
+  "unresolved_questions": [],
+  "metadata": {"created_at":"2026-09-22T00:00:00Z","producer":"hybrid","model_id":"design-baseline","prompt_template_version":"0.1.0"}
+}
+

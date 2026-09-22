@@ -1,0 +1,28 @@
+@startuml
+title Requirement to Verified Variant
+start
+:Receive natural-language requirement;
+:Compile Requirement IR;
+if (Ambiguity above threshold?) then (yes)
+  :Generate minimum clarification questions;
+  stop
+else (no)
+  :Map intent to Feature candidates;
+endif
+:Solve Feature constraints;
+if (Configuration valid?) then (yes)
+  :Synthesize Architecture Graph;
+  :Calculate delta and impact closure;
+  :Generate bounded patch and tests;
+  :Run build, test, security and policy gates;
+  if (All mandatory gates pass?) then (yes)
+    :Publish variant and evidence bundle;
+  else (no)
+    :Return bounded repair task;
+  endif
+else (no)
+  :Return unsat core and alternatives;
+endif
+stop
+@enduml
+

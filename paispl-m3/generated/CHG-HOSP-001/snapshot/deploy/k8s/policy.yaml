@@ -1,0 +1,42 @@
+# generated-by: paispl.generated/v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: policy
+  labels: &id001
+    app.kubernetes.io/name: policy
+    paispl/component-id: CMP-POLICY
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: policy
+  template:
+    metadata:
+      labels: *id001
+    spec:
+      containers:
+      - name: policy
+        image: ghcr.io/paispl/policy:generated
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: policy
+  labels:
+    app.kubernetes.io/name: policy
+    paispl/component-id: CMP-POLICY
+spec:
+  selector:
+    app.kubernetes.io/name: policy
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http

@@ -1,0 +1,35 @@
+@startuml
+!pragma layout smetana
+skinparam componentStyle rectangle
+title PAISPL Architecture Projection - CHG-HOSP-001
+legend
+  <<changed>> added or modified
+  <<disabled>> capability removed or disabled
+endlegend
+component "Audit Service\ncomponentId=CMP-AUDIT\nfeatureIds=audit_logging,model_audit" as C1 <<changed>>
+component "Clinical AI Service\ncomponentId=CMP-CLINICAL-AI\nfeatureIds=clinical_ai_agent,cloud_model" as C2 <<disabled>>
+component "Deployment Profile\ncomponentId=CMP-DEPLOYMENT\nfeatureIds=edge_gateway,hybrid_deployment,kubernetes,phi_encryption,secret_manager" as C3
+component "DICOM Gateway\ncomponentId=CMP-DICOM-GW\nfeatureIds=ct_adapter,dicom_gateway,mri_adapter,pacs_integration" as C4
+component "EMR Connector\ncomponentId=CMP-EMR\nfeatureIds=emr_integration" as C5
+component "FHIR Gateway\ncomponentId=CMP-FHIR\nfeatureIds=fhir_api" as C6 <<changed>>
+component "Identity Service\ncomponentId=CMP-IDENTITY\nfeatureIds=fido2,identity,mfa,oauth2_oidc,passwordless,rbac" as C7 <<changed>>
+component "Observability Stack\ncomponentId=CMP-OBSERVABILITY\nfeatureIds=distributed_tracing,monitoring" as C8
+component "Patient BFF\ncomponentId=CMP-PATIENT-BFF\nfeatureIds=patient_bff,patient_mobile,patient_notifications" as C9 <<changed>>
+component "Policy Enforcement Service\ncomponentId=CMP-POLICY\nfeatureIds=data_residency_kr,network_policy,zero_trust" as C10
+C9 --> C7 : api
+C9 --> C6 : api
+C6 --> C5 : api
+C2 --> C4 : api
+C2 --> C1 : event
+C7 --> C10 : policy
+C9 --> C1 : event
+C4 --> C1 : event
+C5 --> C1 : event
+C2 --> C3 : deployment
+C9 --> C3 : deployment
+C8 --> C3 : deployment
+note bottom
+Generated from Solver-validated configuration.
+Direct UML edits create a Change Proposal and require Solver revalidation.
+end note
+@enduml

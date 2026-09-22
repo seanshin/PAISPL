@@ -1,0 +1,29 @@
+scenario_version: 0.1.0
+sequence:
+  - id: BASE-HOSP-001
+    kind: base
+    source_text: >-
+      200병상 병원이 클라우드 EMR을 사용한다. 인증은 Passwordless와 MFA를 지원하고
+      Zero Trust 정책을 적용한다. PACS와 MRI 및 CT의 DICOM 연동, 의료 AI Agent와
+      AI 판독, 감사 로그가 필요하다. 환자용 모바일 앱은 제외하고 하이브리드 Kubernetes로 배포한다.
+    expected_ir: examples/BASE-HOSP-001.requirement-ir.json
+    gold_configuration: GOLD-BASE-HOSP-001
+  - id: CHG-HOSP-001
+    kind: change
+    base_configuration_id: GOLD-BASE-HOSP-001
+    source_text: AI 판독 기능은 제외하고 환자용 모바일 서비스와 알림을 추가한다.
+    expected_ir: examples/CHG-HOSP-001.requirement-ir.json
+    gold_configuration: GOLD-CHG-HOSP-001
+  - id: CHG-HOSP-002
+    kind: change
+    base_configuration_id: GOLD-CHG-HOSP-001
+    source_text: 외부 Cloud 사용을 중단하고 전체를 On Premise와 Kubernetes 구성으로 전환한다.
+    expected_ir: examples/CHG-HOSP-002.requirement-ir.json
+    gold_configuration: GOLD-CHG-HOSP-002
+  - id: CHG-HOSP-003
+    kind: change
+    base_configuration_id: GOLD-CHG-HOSP-002
+    source_text: LIS 연계를 추가하고 국내 데이터 저장과 ABAC 정책을 필수로 적용한다.
+    expected_ir: examples/CHG-HOSP-003.requirement-ir.json
+    gold_configuration: GOLD-CHG-HOSP-003
+

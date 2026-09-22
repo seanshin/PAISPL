@@ -1,0 +1,33 @@
+@startuml
+!pragma layout smetana
+skinparam componentStyle rectangle
+title PAISPL M4 Before/After - CP-M4-001
+package "Before" {
+  component "componentId=CMP-AUDIT\nfeatureIds=audit_logging,model_audit\nproposalId=CP-M4-001" as B1
+  component "componentId=CMP-CLINICAL-AI\nfeatureIds=clinical_ai_agent,local_model\nproposalId=CP-M4-001" as B2
+  component "componentId=CMP-DEPLOYMENT\nfeatureIds=edge_gateway,kubernetes,on_premise_deployment,phi_encryption,secret_manager\nproposalId=CP-M4-001" as B3
+  component "componentId=CMP-DICOM-GW\nfeatureIds=ct_adapter,dicom_gateway,mri_adapter,pacs_integration\nproposalId=CP-M4-001" as B4
+  component "componentId=CMP-EMR\nfeatureIds=emr_integration\nproposalId=CP-M4-001" as B5
+  component "componentId=CMP-FHIR\nfeatureIds=fhir_api\nproposalId=CP-M4-001" as B6
+  component "componentId=CMP-IDENTITY\nfeatureIds=fido2,identity,mfa,oauth2_oidc,passwordless,rbac\nproposalId=CP-M4-001" as B7
+  component "componentId=CMP-OBSERVABILITY\nfeatureIds=distributed_tracing,monitoring\nproposalId=CP-M4-001" as B9
+  component "componentId=CMP-PATIENT-BFF\nfeatureIds=patient_bff,patient_mobile,patient_notifications\nproposalId=CP-M4-001" as B10
+  component "componentId=CMP-POLICY\nfeatureIds=data_residency_kr,network_policy,zero_trust\nproposalId=CP-M4-001" as B11
+}
+package "After (preview only)" {
+  component "componentId=CMP-AUDIT\nfeatureIds=audit_logging,model_audit\nproposalId=CP-M4-001" as A1
+  component "componentId=CMP-CLINICAL-AI\nfeatureIds=clinical_ai_agent,local_model\nproposalId=CP-M4-001" as A2
+  component "componentId=CMP-DEPLOYMENT\nfeatureIds=edge_gateway,kubernetes,on_premise_deployment,phi_encryption,secret_manager\nproposalId=CP-M4-001" as A3
+  component "componentId=CMP-DICOM-GW\nfeatureIds=ct_adapter,dicom_gateway,mri_adapter,pacs_integration\nproposalId=CP-M4-001" as A4
+  component "componentId=CMP-EMR\nfeatureIds=emr_integration\nproposalId=CP-M4-001" as A5
+  component "componentId=CMP-FHIR\nfeatureIds=fhir_api\nproposalId=CP-M4-001" as A6
+  component "componentId=CMP-IDENTITY\nfeatureIds=fido2,identity,mfa,oauth2_oidc,passwordless,rbac\nproposalId=CP-M4-001" as A7
+  component "componentId=CMP-LIS\nfeatureIds=lis_integration\nproposalId=CP-M4-001" as A8 <<changed>>
+  component "componentId=CMP-OBSERVABILITY\nfeatureIds=distributed_tracing,monitoring\nproposalId=CP-M4-001" as A9
+  component "componentId=CMP-PATIENT-BFF\nfeatureIds=patient_bff,patient_mobile,patient_notifications\nproposalId=CP-M4-001" as A10
+  component "componentId=CMP-POLICY\nfeatureIds=data_residency_kr,network_policy,zero_trust\nproposalId=CP-M4-001" as A11
+}
+note bottom
+roundTripGuard=Preview is not approval. Apply requires Requirement IR, Solver, and approvalId.
+end note
+@enduml

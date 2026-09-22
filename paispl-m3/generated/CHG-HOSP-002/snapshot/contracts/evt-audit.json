@@ -1,0 +1,12 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "audit_logging",
+    "model_audit"
+  ],
+  "id": "EVT-AUDIT",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-AUDIT",
+  "protocolFamily": "event"
+}

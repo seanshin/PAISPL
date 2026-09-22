@@ -1,0 +1,37 @@
+{
+  "milestone": "M2",
+  "status": "PASS",
+  "checks": [
+    {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_all_active_components_have_feature_evidence (test_synthesizer.ArchitectureSynthesizerTests.test_all_active_components_have_feature_evidence) ... ok\ntest_change_impacts_match_gold_expectations (test_synthesizer.ArchitectureSynthesizerTests.test_change_impacts_match_gold_expectations) ... ok\ntest_change_one_preserves_imaging_without_impact (test_synthesizer.ArchitectureSynthesizerTests.test_change_one_preserves_imaging_without_impact) ... ok\ntest_dependencies_never_reference_inactive_components (test_synthesizer.ArchitectureSynthesizerTests.test_dependencies_never_reference_inactive_components) ... ok\ntest_interfaces_retain_owner_feature_evidence (test_synthesizer.ArchitectureSynthesizerTests.test_interfaces_retain_owner_feature_evidence) ... ok\ntest_removed_feature_trace_remains_auditable (test_synthesizer.ArchitectureSynthesizerTests.test_removed_feature_trace_remains_auditable) ... ok\ntest_serialized_result_is_json_safe (test_synthesizer.ArchitectureSynthesizerTests.test_serialized_result_is_json_safe) ... ok\ntest_trace_chain_reaches_component_interface_and_test (test_synthesizer.ArchitectureSynthesizerTests.test_trace_chain_reaches_component_interface_and_test) ... ok\ntest_uml_projection_contains_semantic_anchors_and_guard (test_synthesizer.ArchitectureSynthesizerTests.test_uml_projection_contains_semantic_anchors_and_guard) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.036s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "paispl_m2.cli",
+        "synthesize-sequence",
+        "--design-root",
+        "/Users/weruby/P_Work/paispl-sprint0",
+        "--m1-root",
+        "/Users/weruby/P_Work/paispl-m1",
+        "--output",
+        "/Users/weruby/P_Work/paispl-m2/generated"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scenarios\": 4,\n  \"output\": \"/Users/weruby/P_Work/paispl-m2/generated\"\n}\n",
+      "stderr": ""
+    }
+  ]
+}

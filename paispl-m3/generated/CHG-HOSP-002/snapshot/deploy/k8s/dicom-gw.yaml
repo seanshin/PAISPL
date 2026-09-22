@@ -1,0 +1,42 @@
+# generated-by: paispl.generated/v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dicom-gw
+  labels: &id001
+    app.kubernetes.io/name: dicom-gw
+    paispl/component-id: CMP-DICOM-GW
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dicom-gw
+  template:
+    metadata:
+      labels: *id001
+    spec:
+      containers:
+      - name: dicom-gw
+        image: ghcr.io/paispl/dicom-gw:generated
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dicom-gw
+  labels:
+    app.kubernetes.io/name: dicom-gw
+    paispl/component-id: CMP-DICOM-GW
+spec:
+  selector:
+    app.kubernetes.io/name: dicom-gw
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http

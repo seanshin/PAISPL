@@ -1,0 +1,12 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "distributed_tracing",
+    "monitoring"
+  ],
+  "id": "OTEL-EXPORT",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-OBSERVABILITY",
+  "protocolFamily": "telemetry"
+}

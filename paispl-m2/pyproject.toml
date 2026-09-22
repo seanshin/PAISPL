@@ -1,0 +1,17 @@
+[project]
+name = "paispl-m2"
+version = "0.2.0"
+description = "PAISPL M2 architecture synthesizer and impact closure"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+paispl-m2 = "paispl_m2.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

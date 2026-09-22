@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "scenario_id": "BASE-HOSP-001",
+      "create": 40,
+      "update": 0,
+      "delete": 0,
+      "no_op": 0,
+      "review_only": 0
+    },
+    {
+      "scenario_id": "CHG-HOSP-001",
+      "create": 5,
+      "update": 10,
+      "delete": 0,
+      "no_op": 30,
+      "review_only": 2
+    },
+    {
+      "scenario_id": "CHG-HOSP-002",
+      "create": 0,
+      "update": 9,
+      "delete": 0,
+      "no_op": 36,
+      "review_only": 1
+    },
+    {
+      "scenario_id": "CHG-HOSP-003",
+      "create": 4,
+      "update": 6,
+      "delete": 0,
+      "no_op": 39,
+      "review_only": 3
+    }
+  ]
+}

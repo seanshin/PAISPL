@@ -1,0 +1,14 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "ct_adapter",
+    "dicom_gateway",
+    "mri_adapter",
+    "pacs_integration"
+  ],
+  "id": "API-DICOM-STOW",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-DICOM-GW",
+  "protocolFamily": "http_or_domain_api"
+}

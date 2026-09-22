@@ -1,0 +1,16 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-POLICY
+  name: policy
+  generator: paispl.generated/v1
+spec:
+  componentType: service
+  featureIds:
+  - data_residency_kr
+  - network_policy
+  - zero_trust
+  interfaceIds:
+  - API-POLICY-CHECK
+  dependencies: []

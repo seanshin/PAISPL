@@ -1,0 +1,137 @@
+gold_version: 0.1.0
+configurations:
+  - id: GOLD-BASE-HOSP-001
+    scenario_id: BASE-HOSP-001
+    selected:
+      - healthcare_platform
+      - identity
+      - passwordless
+      - fido2
+      - mfa
+      - rbac
+      - zero_trust
+      - network_policy
+      - secret_manager
+      - audit_logging
+      - phi_encryption
+      - data_residency_kr
+      - hybrid_deployment
+      - edge_gateway
+      - kubernetes
+      - emr_integration
+      - fhir_api
+      - pacs_integration
+      - dicom_gateway
+      - mri_adapter
+      - ct_adapter
+      - clinical_ai_agent
+      - ai_diagnosis
+      - cloud_model
+      - model_audit
+      - monitoring
+      - distributed_tracing
+    explicitly_excluded: [patient_mobile, patient_bff, patient_notifications]
+  - id: GOLD-CHG-HOSP-001
+    scenario_id: CHG-HOSP-001
+    selected:
+      - healthcare_platform
+      - identity
+      - passwordless
+      - fido2
+      - mfa
+      - oauth2_oidc
+      - rbac
+      - zero_trust
+      - network_policy
+      - secret_manager
+      - audit_logging
+      - phi_encryption
+      - data_residency_kr
+      - hybrid_deployment
+      - edge_gateway
+      - kubernetes
+      - emr_integration
+      - fhir_api
+      - pacs_integration
+      - dicom_gateway
+      - mri_adapter
+      - ct_adapter
+      - clinical_ai_agent
+      - cloud_model
+      - model_audit
+      - patient_mobile
+      - patient_bff
+      - patient_notifications
+      - monitoring
+      - distributed_tracing
+    explicitly_excluded: [ai_diagnosis]
+  - id: GOLD-CHG-HOSP-002
+    scenario_id: CHG-HOSP-002
+    selected:
+      - healthcare_platform
+      - identity
+      - passwordless
+      - fido2
+      - mfa
+      - oauth2_oidc
+      - rbac
+      - zero_trust
+      - network_policy
+      - secret_manager
+      - audit_logging
+      - phi_encryption
+      - data_residency_kr
+      - on_premise_deployment
+      - edge_gateway
+      - kubernetes
+      - emr_integration
+      - fhir_api
+      - pacs_integration
+      - dicom_gateway
+      - mri_adapter
+      - ct_adapter
+      - clinical_ai_agent
+      - local_model
+      - model_audit
+      - patient_mobile
+      - patient_bff
+      - patient_notifications
+      - monitoring
+      - distributed_tracing
+    explicitly_excluded: [ai_diagnosis, cloud_deployment, hybrid_deployment, cloud_model]
+  - id: GOLD-CHG-HOSP-003
+    scenario_id: CHG-HOSP-003
+    selected:
+      - healthcare_platform
+      - identity
+      - passwordless
+      - fido2
+      - mfa
+      - oauth2_oidc
+      - rbac
+      - abac
+      - zero_trust
+      - network_policy
+      - secret_manager
+      - audit_logging
+      - phi_encryption
+      - data_residency_kr
+      - on_premise_deployment
+      - edge_gateway
+      - kubernetes
+      - emr_integration
+      - fhir_api
+      - lis_integration
+      - pacs_integration
+      - dicom_gateway
+      - mri_adapter
+      - ct_adapter
+      - clinical_ai_agent
+      - local_model
+      - model_audit
+      - patient_mobile
+      - patient_bff
+      - patient_notifications
+      - monitoring
+      - distributed_tracing
+    explicitly_excluded: [ai_diagnosis, cloud_deployment, hybrid_deployment, cloud_model]

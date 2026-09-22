@@ -1,0 +1,42 @@
+# generated-by: paispl.generated/v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clinical-ai
+  labels: &id001
+    app.kubernetes.io/name: clinical-ai
+    paispl/component-id: CMP-CLINICAL-AI
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: clinical-ai
+  template:
+    metadata:
+      labels: *id001
+    spec:
+      containers:
+      - name: clinical-ai
+        image: ghcr.io/paispl/clinical-ai:generated
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: clinical-ai
+  labels:
+    app.kubernetes.io/name: clinical-ai
+    paispl/component-id: CMP-CLINICAL-AI
+spec:
+  selector:
+    app.kubernetes.io/name: clinical-ai
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http

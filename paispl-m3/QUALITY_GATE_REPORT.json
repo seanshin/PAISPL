@@ -1,0 +1,35 @@
+{
+  "milestone": "M3",
+  "status": "PASS",
+  "checks": [
+    {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_change_one_preserves_imaging_and_emr_bytes (test_generator.ArtifactGeneratorTests.test_change_one_preserves_imaging_and_emr_bytes) ... ok\ntest_change_plans_distinguish_write_and_review_only (test_generator.ArtifactGeneratorTests.test_change_plans_distinguish_write_and_review_only) ... ok\ntest_contracts_explicitly_remain_stubs (test_generator.ArtifactGeneratorTests.test_contracts_explicitly_remain_stubs) ... ok\ntest_deployment_uml_is_a_tagged_projection (test_generator.ArtifactGeneratorTests.test_deployment_uml_is_a_tagged_projection) ... ok\ntest_every_artifact_has_safe_relative_path_and_owner_marker (test_generator.ArtifactGeneratorTests.test_every_artifact_has_safe_relative_path_and_owner_marker) ... ok\ntest_generated_python_compiles (test_generator.ArtifactGeneratorTests.test_generated_python_compiles) ... ok\ntest_generated_yaml_is_parseable (test_generator.ArtifactGeneratorTests.test_generated_yaml_is_parseable) ... ok\ntest_generation_is_deterministic (test_generator.ArtifactGeneratorTests.test_generation_is_deterministic) ... ok\ntest_natural_language_trace_reaches_generated_paths (test_generator.ArtifactGeneratorTests.test_natural_language_trace_reaches_generated_paths) ... ok\ntest_only_manifest_owned_paths_can_be_deleted (test_generator.ArtifactGeneratorTests.test_only_manifest_owned_paths_can_be_deleted) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.110s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "paispl_m3.cli",
+        "generate-sequence",
+        "--architecture-root",
+        "/Users/weruby/P_Work/paispl-m2/generated",
+        "--output",
+        "/Users/weruby/P_Work/paispl-m3/generated"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scenarios\": [\n    {\n      \"scenario_id\": \"BASE-HOSP-001\",\n      \"create\": 40,\n      \"update\": 0,\n      \"delete\": 0,\n      \"no_op\": 0,\n      \"review_only\": 0\n    },\n    {\n      \"scenario_id\": \"CHG-HOSP-001\",\n      \"create\": 5,\n      \"update\": 10,\n      \"delete\": 0,\n      \"no_op\": 30,\n      \"review_only\": 2\n    },\n    {\n      \"scenario_id\": \"CHG-HOSP-002\",\n      \"create\": 0,\n      \"update\": 9,\n      \"delete\": 0,\n      \"no_op\": 36,\n      \"review_only\": 1\n    },\n    {\n      \"scenario_id\": \"CHG-HOSP-003\",\n      \"create\": 4,\n      \"update\": 6,\n      \"delete\": 0,\n      \"no_op\": 39,\n      \"review_only\": 3\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ]
+}

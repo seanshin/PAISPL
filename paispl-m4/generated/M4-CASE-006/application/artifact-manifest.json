@@ -1,0 +1,350 @@
+{
+  "approval_id": "APR-M4-006",
+  "artifacts": [
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-AUDIT",
+      "path": "components/audit/app.py",
+      "sha256": "fa41796e17f96086e9bc9890e7f9b7399eb0cee54af3f9d737b3c830b7baa6eb",
+      "size_bytes": 1020
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-AUDIT",
+      "path": "components/audit/component.yaml",
+      "sha256": "0dd877525bb33c9e0859387803edce5ae98b553237a285cbe732939d60b9ec62",
+      "size_bytes": 301
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-CLINICAL-AI",
+      "path": "components/clinical-ai/app.py",
+      "sha256": "4aab99b79dd88876d090bffa766c225954dbe677ef51be6796ec9ffb774c9d22",
+      "size_bytes": 1059
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-CLINICAL-AI",
+      "path": "components/clinical-ai/component.yaml",
+      "sha256": "d6245724f3ee617a1c9d0ba4a1523d7370a788ebc5affd39bf8365a27f06eba2",
+      "size_bytes": 543
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-DEPLOYMENT",
+      "path": "components/deployment/component.yaml",
+      "sha256": "d8422ff0739ef84cf51345d96678d0d69f29db651be4bbd9e3c66c208355fb63",
+      "size_bytes": 386
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-DICOM-GW",
+      "path": "components/dicom-gw/app.py",
+      "sha256": "46239775a57b18a8b0c71530aa122cecbc18bfe05066983705a77ecc1a7f29d6",
+      "size_bytes": 1092
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-DICOM-GW",
+      "path": "components/dicom-gw/component.yaml",
+      "sha256": "34c624b40251582cb350b62c1bafd40c5a53119b66e475e7a5f5ded6d1f7363d",
+      "size_bytes": 427
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-EMR",
+      "path": "components/emr/app.py",
+      "sha256": "a1fd4d9ddb83354de8355185bcae379bdd8b63fbff7a6a68625b22290e8ec234",
+      "size_bytes": 999
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-EMR",
+      "path": "components/emr/component.yaml",
+      "sha256": "d3341e5bdcd6676a284f7f158f38820aad8c3f2bd304f3a88b0b09c42781f770",
+      "size_bytes": 336
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-FHIR",
+      "path": "components/fhir/app.py",
+      "sha256": "8c8d32eb3c7808b0b1b17841cd2fd69e30f94d9d08dfc3c76a13cfb0e47de693",
+      "size_bytes": 996
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-FHIR",
+      "path": "components/fhir/component.yaml",
+      "sha256": "978b0b2679c40e9bf72f399eb49f2001713f439cd547ff62f2d7e7818357392c",
+      "size_bytes": 332
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-IDENTITY",
+      "path": "components/identity/app.py",
+      "sha256": "45a74f347f3dc433aee642250a91043a6a4cd5c82884513dbb398f55e907dc06",
+      "size_bytes": 1096
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-IDENTITY",
+      "path": "components/identity/component.yaml",
+      "sha256": "4c72e2a75d49d4e1baa63ccceb5a9ced6399a8ddfc27d2b2e5f72b198d7a5b73",
+      "size_bytes": 424
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-LIS",
+      "path": "components/lis/app.py",
+      "sha256": "6635ce509a79f1b3509fb48610028b1eeee69dfb1b3c5a26aa4aac34e37c29e0",
+      "size_bytes": 999
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-LIS",
+      "path": "components/lis/component.yaml",
+      "sha256": "a2ca05fe03ce9ba4cf878ff10720b94a64e60bc9178dfa03888e3d8bb7dfa7e2",
+      "size_bytes": 332
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-OBSERVABILITY",
+      "path": "components/observability/app.py",
+      "sha256": "3b54001e78e1410d1177077687c49cab93a07a1b1b873d440616ab0ee80a6263",
+      "size_bytes": 1042
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-OBSERVABILITY",
+      "path": "components/observability/component.yaml",
+      "sha256": "aba90c87c9f4877107d4c8f65c8ff308b47a9927e699abfe426c5bfefe40e6fc",
+      "size_bytes": 400
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-PATIENT-BFF",
+      "path": "components/patient-bff/app.py",
+      "sha256": "3fc4b791a82c0ff2f4905150e43fac5f34f8f7ca3aca5d63853b33ed1f7ee3b4",
+      "size_bytes": 1082
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-PATIENT-BFF",
+      "path": "components/patient-bff/component.yaml",
+      "sha256": "dc3c586a73beb8d94350d9922cae333cd6c1672c89681974f88873a3f0a9e10a",
+      "size_bytes": 634
+    },
+    {
+      "kind": "code_scaffold",
+      "owner_component_id": "CMP-POLICY",
+      "path": "components/policy/app.py",
+      "sha256": "51b5f9cf54bc010b9ca4f7122a7221f9e480a5c99cd433aa5947993e50ba1ea6",
+      "size_bytes": 1066
+    },
+    {
+      "kind": "component_descriptor",
+      "owner_component_id": "CMP-POLICY",
+      "path": "components/policy/component.yaml",
+      "sha256": "3e3860f0a3932297c0155b33d0b68464b88767af48f476047c0de6a6ec7eb0c0",
+      "size_bytes": 332
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-CLINICAL-AI",
+      "path": "contracts/api-ai-infer.json",
+      "sha256": "39edc40b6e81068ad3232aef7ebd1736e47365e9d55c00ed5bad3fd1926f7656",
+      "size_bytes": 304
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-DICOM-GW",
+      "path": "contracts/api-dicom-qido.json",
+      "sha256": "fe289571b3eb2991d2c884b7fd7d00724cd40408afd0ad89983b34522108ba55",
+      "size_bytes": 341
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-DICOM-GW",
+      "path": "contracts/api-dicom-stow.json",
+      "sha256": "73e061685f1369281e1eb82c9b9e6e3349d7b07a88538fc10cc6a527f7fe37fd",
+      "size_bytes": 341
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-EMR",
+      "path": "contracts/api-emr.json",
+      "sha256": "87035da0b44218e3bb3366aef789c95fd405d1bceb7854ad829339d1cde53b49",
+      "size_bytes": 270
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-FHIR",
+      "path": "contracts/api-fhir-r4.json",
+      "sha256": "ea595ec99690eb22a6a85300b7dd0b67528dc77134dccdf0e0acd2fbe150c60f",
+      "size_bytes": 268
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-LIS",
+      "path": "contracts/api-lis.json",
+      "sha256": "ef3c1712ddbc19948fbb8762a798f3fc7a40055d931b7ddb40b0b659af96cfc4",
+      "size_bytes": 270
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-IDENTITY",
+      "path": "contracts/api-oidc.json",
+      "sha256": "1e42b1fc9fb2b30b0b6e96871743fbf322720c51e55c1361f96c560bcb17425b",
+      "size_bytes": 344
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-PATIENT-BFF",
+      "path": "contracts/api-patient.json",
+      "sha256": "48ca4f2251eef50a4c744fd58fa04ab5ca9836a6228d21d5e5e199ee48458c43",
+      "size_bytes": 329
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-POLICY",
+      "path": "contracts/api-policy-check.json",
+      "sha256": "41ea27b581de53178d9e82eff9929da2591f54490ce5941a2b447a7b98f75f61",
+      "size_bytes": 324
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-IDENTITY",
+      "path": "contracts/api-webauthn.json",
+      "sha256": "0188a9cf59962736cdc56fdcb0086c818735ae04463cd3ef02597c957171362e",
+      "size_bytes": 348
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-DEPLOYMENT",
+      "path": "contracts/deploy-manifest.json",
+      "sha256": "4b92c0301f1519278dcb532f6cede904dafcc45eb1a3aa7bd04e32f555a5fc34",
+      "size_bytes": 365
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-CLINICAL-AI",
+      "path": "contracts/evt-ai-audit.json",
+      "sha256": "ac3cea8e0b4309fcf14a69b439bfef714843f96769005b34d2a4a7a8a6ab8937",
+      "size_bytes": 291
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-AUDIT",
+      "path": "contracts/evt-audit.json",
+      "sha256": "104056dbd5fc775847ef5e8512fc96ed9c5e12e28fdaf4e4b19293173f15c000",
+      "size_bytes": 278
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-PATIENT-BFF",
+      "path": "contracts/evt-patient-notify.json",
+      "sha256": "bb4f7e2f731de2814613f96a9e7ee35c85e3caf24743e4abb0fb036d2b553413",
+      "size_bytes": 323
+    },
+    {
+      "kind": "interface_contract",
+      "owner_component_id": "CMP-OBSERVABILITY",
+      "path": "contracts/otel-export.json",
+      "sha256": "55c9aa4d96fa932e4a3649f04ed1d5b305b49ef2896722b332a33bb802b10fa9",
+      "size_bytes": 297
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-AUDIT",
+      "path": "deploy/k8s/audit.yaml",
+      "sha256": "2da4a24c5c17b12c94bb7b71bf9938a69d309633e211987888074e70dfa4e720",
+      "size_bytes": 815
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-CLINICAL-AI",
+      "path": "deploy/k8s/clinical-ai.yaml",
+      "sha256": "9a32cb4762637a29ff7f1a67de7d352284f251d2c7494acc91862aaeaa5b685f",
+      "size_bytes": 875
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-DICOM-GW",
+      "path": "deploy/k8s/dicom-gw.yaml",
+      "sha256": "97723c6725181aadce721f560146fed0d93d7b2af234b8dd33699dfdb274f7c6",
+      "size_bytes": 845
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-EMR",
+      "path": "deploy/k8s/emr.yaml",
+      "sha256": "7af3cddcd0d7faad2eb7e83686de9820ee5076224eba736baf88da877201e75a",
+      "size_bytes": 795
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-FHIR",
+      "path": "deploy/k8s/fhir.yaml",
+      "sha256": "25c9088e6ef9410966ec75b739c6baa33ba641043c221a76bc06b9a707a9d9dd",
+      "size_bytes": 805
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-IDENTITY",
+      "path": "deploy/k8s/identity.yaml",
+      "sha256": "0648937d35a76d7f2e5c97c0e0ff9848a705564b3f3904dc831375586d837122",
+      "size_bytes": 845
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-LIS",
+      "path": "deploy/k8s/lis.yaml",
+      "sha256": "a8b72007f526dcb08e6c01420a00d16a7b0c628d1f40e593baa0e8da34f6bc75",
+      "size_bytes": 795
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-OBSERVABILITY",
+      "path": "deploy/k8s/observability.yaml",
+      "sha256": "1e35dcd2e17f0a9d9a19a52c299cc13d6b7efac5ae56c719fa8ce22eb7fb465c",
+      "size_bytes": 895
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-PATIENT-BFF",
+      "path": "deploy/k8s/patient-bff.yaml",
+      "sha256": "b2528a1fd9762421a892840c2880ff4cfe0ba4998ad744e99f3a42f0c10bc49a",
+      "size_bytes": 875
+    },
+    {
+      "kind": "kubernetes_manifest",
+      "owner_component_id": "CMP-POLICY",
+      "path": "deploy/k8s/policy.yaml",
+      "sha256": "a9cdbeaf840b915b5633dac9624b5b20e3846df24fccb7ee8585a37d4cac20bf",
+      "size_bytes": 825
+    },
+    {
+      "kind": "deployment_profile",
+      "owner_component_id": "CMP-DEPLOYMENT",
+      "path": "deploy/profile.yaml",
+      "sha256": "a8b72e19c2cd1e5914b775a87f3c520547100874e8e7ac263b6d54c8e6c44c57",
+      "size_bytes": 288
+    },
+    {
+      "kind": "traceability_manifest",
+      "owner_component_id": null,
+      "path": "trace/traceability.json",
+      "sha256": "cb6076a09b7a58bbf9b754e815921ca1cb41f21d5723e56a0773ffc7d8b054e8",
+      "size_bytes": 796
+    },
+    {
+      "kind": "uml_projection",
+      "owner_component_id": null,
+      "path": "uml/deployment.puml",
+      "sha256": "bb1aa14f0ad2dd202084e9a1c1c9e68d4d50a63d08e08b813a4c1db26aa85ca1",
+      "size_bytes": 1791
+    }
+  ],
+  "generator": "paispl.generated/v1",
+  "proposal_id": "CP-M4-006"
+}

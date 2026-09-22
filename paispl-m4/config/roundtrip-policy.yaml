@@ -1,0 +1,21 @@
+policy_version: 0.4.0
+approval_policy_id: human-explicit-v1
+generated_elements_are_read_only: true
+uml_edits_create_change_proposals: true
+require_requirement_ir_translation: true
+require_solver_revalidation: true
+require_explicit_approval: true
+supported_semantic_operations:
+  - include_feature
+  - exclude_feature
+  - replace_feature
+  - preserve_feature
+approved_architecture_rules: []
+allowed_transitions:
+  DRAFT: [PENDING_VALIDATION]
+  PENDING_VALIDATION: [VALIDATED, REJECTED]
+  VALIDATED: [PENDING_APPROVAL]
+  PENDING_APPROVAL: [APPROVED, REJECTED]
+  APPROVED: [APPLIED]
+  REJECTED: []
+  APPLIED: []

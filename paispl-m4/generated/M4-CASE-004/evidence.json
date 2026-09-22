@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "base_architecture_hash": "37ba19ad2b794ebe7144e4c8ff3f220d9b3dabae7245793394b676be37223f28",
+    "proposal_hash": "f81bd4725ed4145c0c0f29ad5fb2d8f8092283b9663a88e8b46f99883f05760b"
+  },
+  "explanation_ko": "UML 요소 CMP-LIS의 추가는 Feature lis_integration 선택을 요청합니다.",
+  "findings": [
+    {
+      "code": "STALE_BASE_ARCHITECTURE",
+      "constraint_ids": [],
+      "message": "base architecture hash differs from the current canonical graph; rebase is required",
+      "source_ids": [
+        "UML-ARCH-CHG-HOSP-002-STALE",
+        "GOLD-CHG-HOSP-002"
+      ],
+      "stage": "base"
+    }
+  ],
+  "outcome": "REJECTED",
+  "proposal": {
+    "base_architecture_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "base_configuration_id": "GOLD-CHG-HOSP-002",
+    "created_at": "2026-09-22T01:03:00Z",
+    "edit_type": "addition",
+    "operations": [
+      {
+        "kind": "include_feature",
+        "operation_id": "CPO-001",
+        "source_id": "CMP-LIS",
+        "source_quote": "LIS 연계를 추가한다.",
+        "target_id": "lis_integration"
+      }
+    ],
+    "origin_uml": {
+      "element_ids": [
+        "CMP-LIS"
+      ],
+      "model_id": "UML-ARCH-CHG-HOSP-002-STALE",
+      "model_path": "paispl-m2/generated/CHG-HOSP-002.component.puml"
+    },
+    "proposal_id": "CP-M4-004",
+    "proposer": {
+      "id": "M4-FIXTURE-AUTHOR",
+      "type": "test_fixture"
+    },
+    "rationale": "오래된 UML 모델에서 LIS 연계를 추가한다.",
+    "request_id": "UML-CASE-004",
+    "required_approval_policy": "human-explicit-v1",
+    "status": "REJECTED",
+    "version": "0.4.0"
+  },
+  "state_history": [
+    "DRAFT",
+    "PENDING_VALIDATION",
+    "REJECTED"
+  ]
+}

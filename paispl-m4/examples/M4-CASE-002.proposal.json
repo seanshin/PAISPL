@@ -1,0 +1,34 @@
+{
+  "version": "0.4.0",
+  "proposal_id": "CP-M4-002",
+  "request_id": "UML-CASE-002",
+  "base_configuration_id": "GOLD-CHG-HOSP-001",
+  "base_architecture_hash": "47a104dcd55d0cf97a07515f19904acee99e8f6ddd27cd8e4adde654e0bac03b",
+  "origin_uml": {
+    "model_id": "UML-ARCH-CHG-HOSP-001",
+    "model_path": "paispl-m2/generated/CHG-HOSP-001.component.puml",
+    "element_ids": ["CMP-IDENTITY", "CMP-PATIENT-BFF"]
+  },
+  "edit_type": "compound",
+  "rationale": "환자 BFF는 유지하면서 필수 OIDC 기능을 제거한다.",
+  "operations": [
+    {
+      "operation_id": "CPO-001",
+      "kind": "preserve_feature",
+      "source_id": "CMP-PATIENT-BFF",
+      "target_id": "patient_bff",
+      "source_quote": "환자 BFF는 유지한다."
+    },
+    {
+      "operation_id": "CPO-002",
+      "kind": "exclude_feature",
+      "source_id": "CMP-IDENTITY",
+      "target_id": "oauth2_oidc",
+      "source_quote": "OIDC 기능은 제거한다."
+    }
+  ],
+  "proposer": {"id": "M4-FIXTURE-AUTHOR", "type": "test_fixture"},
+  "created_at": "2026-09-22T01:01:00Z",
+  "status": "DRAFT",
+  "required_approval_policy": "human-explicit-v1"
+}

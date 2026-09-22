@@ -1,0 +1,17 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-LIS
+  name: lis
+  generator: paispl.generated/v1
+spec:
+  componentType: adapter
+  featureIds:
+  - lis_integration
+  interfaceIds:
+  - API-LIS
+  dependencies:
+  - source: CMP-LIS
+    target: CMP-EMR
+    kind: api

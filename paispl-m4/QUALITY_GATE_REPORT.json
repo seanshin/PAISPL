@@ -1,0 +1,128 @@
+{
+  "checks": [
+    {
+      "name": "M4 unit tests",
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 20
+    },
+    {
+      "name": "M4 required examples",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Sprint 0 validation",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "M1 quality gate",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "M2 quality gate",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "M3 quality gate",
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ],
+  "milestone": "M4",
+  "package": {
+    "integrity": "PASS",
+    "reproducible": "PASS",
+    "sha256_sidecar": "PAISPL_M4_UML_Roundtrip_Controller_v0.4.0.zip.sha256",
+    "status": "PASS",
+    "target": "PAISPL_M4_UML_Roundtrip_Controller_v0.4.0.zip"
+  },
+  "plantuml": {
+    "file_count": 15,
+    "reason": "plantuml.jar is absent",
+    "status": "NOT_EXECUTED"
+  },
+  "required_cases": {
+    "cases": [
+      {
+        "case_id": "M4-CASE-001",
+        "finding_codes": [],
+        "outcome": "PENDING_APPROVAL",
+        "state_history": [
+          "DRAFT",
+          "PENDING_VALIDATION",
+          "VALIDATED",
+          "PENDING_APPROVAL"
+        ]
+      },
+      {
+        "case_id": "M4-CASE-002",
+        "finding_codes": [
+          "UNSATISFIABLE_FEATURE_DELTA"
+        ],
+        "outcome": "REJECTED",
+        "state_history": [
+          "DRAFT",
+          "PENDING_VALIDATION",
+          "REJECTED"
+        ]
+      },
+      {
+        "case_id": "M4-CASE-003",
+        "finding_codes": [
+          "UNKNOWN_UML_ELEMENT_ID",
+          "UNKNOWN_UML_ELEMENT_ID"
+        ],
+        "outcome": "REJECTED",
+        "state_history": [
+          "DRAFT",
+          "PENDING_VALIDATION",
+          "REJECTED"
+        ]
+      },
+      {
+        "case_id": "M4-CASE-004",
+        "finding_codes": [
+          "STALE_BASE_ARCHITECTURE"
+        ],
+        "outcome": "REJECTED",
+        "state_history": [
+          "DRAFT",
+          "PENDING_VALIDATION",
+          "REJECTED"
+        ]
+      },
+      {
+        "case_id": "M4-CASE-005",
+        "finding_codes": [
+          "UNRESOLVED_SEMANTIC_EDIT"
+        ],
+        "outcome": "REJECTED",
+        "state_history": [
+          "DRAFT",
+          "PENDING_VALIDATION",
+          "REJECTED"
+        ]
+      },
+      {
+        "case_id": "M4-CASE-006",
+        "finding_codes": [],
+        "outcome": "APPLIED",
+        "state_history": [
+          "DRAFT",
+          "PENDING_VALIDATION",
+          "VALIDATED",
+          "PENDING_APPROVAL",
+          "APPROVED",
+          "APPLIED"
+        ]
+      }
+    ],
+    "status": "PASS"
+  },
+  "status": "PASS",
+  "version": "0.4.0"
+}

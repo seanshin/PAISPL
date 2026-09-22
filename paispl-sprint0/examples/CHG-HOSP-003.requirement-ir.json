@@ -1,0 +1,28 @@
+{
+  "version":"0.1.0",
+  "request_id":"CHG-HOSP-003",
+  "domain":"healthcare-platform",
+  "source_text":"LIS 연계를 추가하고 국내 데이터 저장과 ABAC 정책을 필수로 적용한다.",
+  "base_configuration_id":"GOLD-CHG-HOSP-002",
+  "intents":[
+    {"id":"INT-001","operation":"include","subject":"LIS 연계","feature_candidates":[{"feature_id":"lis_integration","score":0.99}],"confidence":0.99,"source_quote":"LIS 연계를 추가"},
+    {"id":"INT-002","operation":"include","subject":"국내 데이터 저장","feature_candidates":[{"feature_id":"data_residency_kr","score":0.99}],"confidence":0.99,"source_quote":"국내 데이터 저장"},
+    {"id":"INT-003","operation":"include","subject":"ABAC","feature_candidates":[{"feature_id":"abac","score":0.99}],"confidence":0.99,"source_quote":"ABAC 정책을 필수"}
+  ],
+  "functional_requirements":[
+    {"id":"FR-001","statement":"LIS 연계가 검사 결과를 수신한다.","priority":"must","acceptance_test_ids":["AT-LIS-001","AT-LIS-002"]}
+  ],
+  "non_functional_requirements":[
+    {"id":"NFR-001","category":"privacy","statement":"모든 PHI는 국내 저장소에만 저장한다.","measure":"Data Residency Policy Test가 통과해야 한다."},
+    {"id":"NFR-002","category":"security","statement":"민감 자원 접근에 ABAC를 적용한다.","measure":"ABAC Deny Test와 Permit Test가 통과해야 한다."}
+  ],
+  "constraints":[
+    {"id":"RC-001","kind":"feature","expression":"lis_integration = true","hard":true},
+    {"id":"RC-002","kind":"data","expression":"data_residency = KR","hard":true},
+    {"id":"RC-003","kind":"policy","expression":"abac = true","hard":true}
+  ],
+  "deployment":{"profile":"unchanged","runtime":"unchanged"},
+  "data_classes":["PHI","personal","credential"],
+  "unresolved_questions":[],
+  "metadata":{"created_at":"2026-09-22T00:03:00Z","producer":"hybrid","model_id":"design-baseline","prompt_template_version":"0.1.0"}
+}

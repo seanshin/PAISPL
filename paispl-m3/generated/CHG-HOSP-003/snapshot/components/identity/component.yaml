@@ -1,0 +1,24 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-IDENTITY
+  name: identity
+  generator: paispl.generated/v1
+spec:
+  componentType: service
+  featureIds:
+  - abac
+  - fido2
+  - identity
+  - mfa
+  - oauth2_oidc
+  - passwordless
+  - rbac
+  interfaceIds:
+  - API-OIDC
+  - API-WEBAUTHN
+  dependencies:
+  - source: CMP-IDENTITY
+    target: CMP-POLICY
+    kind: policy

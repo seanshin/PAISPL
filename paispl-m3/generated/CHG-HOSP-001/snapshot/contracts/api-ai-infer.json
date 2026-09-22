@@ -1,0 +1,12 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "clinical_ai_agent",
+    "cloud_model"
+  ],
+  "id": "API-AI-INFER",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-CLINICAL-AI",
+  "protocolFamily": "http_or_domain_api"
+}

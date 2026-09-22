@@ -1,0 +1,84 @@
+{
+  "configuration_id": "CFG-CHG-HOSP-001",
+  "deletion_policy": "manifest_owned_only",
+  "operations": {
+    "create": [
+      "components/patient-bff/app.py",
+      "components/patient-bff/component.yaml",
+      "contracts/api-patient.json",
+      "contracts/evt-patient-notify.json",
+      "deploy/k8s/patient-bff.yaml"
+    ],
+    "delete": [],
+    "no_op": [
+      "components/audit/app.py",
+      "components/audit/component.yaml",
+      "components/deployment/component.yaml",
+      "components/dicom-gw/app.py",
+      "components/dicom-gw/component.yaml",
+      "components/emr/app.py",
+      "components/emr/component.yaml",
+      "components/fhir/app.py",
+      "components/fhir/component.yaml",
+      "components/observability/app.py",
+      "components/observability/component.yaml",
+      "components/policy/app.py",
+      "components/policy/component.yaml",
+      "contracts/api-dicom-qido.json",
+      "contracts/api-dicom-stow.json",
+      "contracts/api-emr.json",
+      "contracts/api-fhir-r4.json",
+      "contracts/api-policy-check.json",
+      "contracts/deploy-manifest.json",
+      "contracts/evt-audit.json",
+      "contracts/otel-export.json",
+      "deploy/k8s/audit.yaml",
+      "deploy/k8s/clinical-ai.yaml",
+      "deploy/k8s/dicom-gw.yaml",
+      "deploy/k8s/emr.yaml",
+      "deploy/k8s/fhir.yaml",
+      "deploy/k8s/identity.yaml",
+      "deploy/k8s/observability.yaml",
+      "deploy/k8s/policy.yaml",
+      "deploy/profile.yaml"
+    ],
+    "update": [
+      "components/clinical-ai/app.py",
+      "components/clinical-ai/component.yaml",
+      "components/identity/app.py",
+      "components/identity/component.yaml",
+      "contracts/api-ai-infer.json",
+      "contracts/api-oidc.json",
+      "contracts/api-webauthn.json",
+      "contracts/evt-ai-audit.json",
+      "trace/traceability.json",
+      "uml/deployment.puml"
+    ]
+  },
+  "regression_test_ids": [
+    "AT-AI-001",
+    "AT-AI-002",
+    "AT-AI-003",
+    "AT-AUTH-001",
+    "AT-AUTH-002",
+    "AT-EMR-001",
+    "AT-MOB-001",
+    "AT-MOB-002",
+    "AT-SEC-002",
+    "AT-TRACE-001",
+    "AT-UML-001",
+    "AT-UML-002"
+  ],
+  "request_id": "CHG-HOSP-001",
+  "review_only_component_ids": [
+    "CMP-AUDIT",
+    "CMP-FHIR"
+  ],
+  "summary": {
+    "create": 5,
+    "delete": 0,
+    "no_op": 30,
+    "review_only": 2,
+    "update": 10
+  }
+}

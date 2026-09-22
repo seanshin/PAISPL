@@ -1,0 +1,12 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "clinical_ai_agent",
+    "local_model"
+  ],
+  "id": "EVT-AI-AUDIT",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-CLINICAL-AI",
+  "protocolFamily": "event"
+}

@@ -1,0 +1,16 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "fido2",
+    "identity",
+    "mfa",
+    "oauth2_oidc",
+    "passwordless",
+    "rbac"
+  ],
+  "id": "API-WEBAUTHN",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-IDENTITY",
+  "protocolFamily": "http_or_domain_api"
+}

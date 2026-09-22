@@ -1,0 +1,17 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-FHIR
+  name: fhir
+  generator: paispl.generated/v1
+spec:
+  componentType: gateway
+  featureIds:
+  - fhir_api
+  interfaceIds:
+  - API-FHIR-R4
+  dependencies:
+  - source: CMP-FHIR
+    target: CMP-EMR
+    kind: api

@@ -1,0 +1,43 @@
+@startuml
+!pragma layout smetana
+title PAISPL Traceability Metamodel
+class Requirement {
+  id
+  statement
+  priority
+}
+class Intent {
+  operation
+  confidence
+  sourceQuote
+}
+class Feature {
+  id
+  selected
+}
+class Constraint {
+  id
+  type
+}
+class Component {
+  id
+  version
+}
+class TestCase {
+  id
+  level
+}
+class Evidence {
+  id
+  result
+  executionHash
+}
+
+Requirement "1" --> "1..*" Intent : interpretedAs
+Intent "*" --> "1..*" Feature : proposes
+Feature "*" --> "*" Constraint : governedBy
+Feature "*" --> "1..*" Component : realizedBy
+Requirement "1" --> "1..*" TestCase : verifiedBy
+Component "1" --> "*" TestCase : exercisedBy
+TestCase "1" --> "1..*" Evidence : produces
+@enduml

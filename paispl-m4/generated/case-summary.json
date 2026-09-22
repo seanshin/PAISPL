@@ -1,0 +1,78 @@
+{
+  "cases": [
+    {
+      "case_id": "M4-CASE-001",
+      "finding_codes": [],
+      "outcome": "PENDING_APPROVAL",
+      "state_history": [
+        "DRAFT",
+        "PENDING_VALIDATION",
+        "VALIDATED",
+        "PENDING_APPROVAL"
+      ]
+    },
+    {
+      "case_id": "M4-CASE-002",
+      "finding_codes": [
+        "UNSATISFIABLE_FEATURE_DELTA"
+      ],
+      "outcome": "REJECTED",
+      "state_history": [
+        "DRAFT",
+        "PENDING_VALIDATION",
+        "REJECTED"
+      ]
+    },
+    {
+      "case_id": "M4-CASE-003",
+      "finding_codes": [
+        "UNKNOWN_UML_ELEMENT_ID",
+        "UNKNOWN_UML_ELEMENT_ID"
+      ],
+      "outcome": "REJECTED",
+      "state_history": [
+        "DRAFT",
+        "PENDING_VALIDATION",
+        "REJECTED"
+      ]
+    },
+    {
+      "case_id": "M4-CASE-004",
+      "finding_codes": [
+        "STALE_BASE_ARCHITECTURE"
+      ],
+      "outcome": "REJECTED",
+      "state_history": [
+        "DRAFT",
+        "PENDING_VALIDATION",
+        "REJECTED"
+      ]
+    },
+    {
+      "case_id": "M4-CASE-005",
+      "finding_codes": [
+        "UNRESOLVED_SEMANTIC_EDIT"
+      ],
+      "outcome": "REJECTED",
+      "state_history": [
+        "DRAFT",
+        "PENDING_VALIDATION",
+        "REJECTED"
+      ]
+    },
+    {
+      "case_id": "M4-CASE-006",
+      "finding_codes": [],
+      "outcome": "APPLIED",
+      "state_history": [
+        "DRAFT",
+        "PENDING_VALIDATION",
+        "VALIDATED",
+        "PENDING_APPROVAL",
+        "APPROVED",
+        "APPLIED"
+      ]
+    }
+  ],
+  "status": "PASS"
+}

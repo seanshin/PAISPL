@@ -1,0 +1,17 @@
+{
+  "approval_id": "APR-M4-006",
+  "approver": {
+    "id": "M4-FIXTURE-APPROVER",
+    "type": "test_fixture"
+  },
+  "base_architecture_hash": "37ba19ad2b794ebe7144e4c8ff3f220d9b3dabae7245793394b676be37223f28",
+  "base_configuration_id": "GOLD-CHG-HOSP-002",
+  "decision": "APPROVE",
+  "policy_version": "human-explicit-v1",
+  "preview_architecture_hash": "39f69afe1d04d58f99b65b3cdccfc73bc872085d3749365d80b8019d033b1a6e",
+  "preview_configuration_hash": "78cd7de11427cf0187dd33d19fc8b4987ac5b7f3be325fb9a47ff186f05bec50",
+  "proposal_hash": "2f61e844849057c990b9b5cfcfdab18c2e10051aa4243fe4c631f7f9428dd97f",
+  "proposal_id": "CP-M4-006",
+  "rationale": "검증된 LIS 변경 경계와 영향을 승인한다.",
+  "version": "0.4.0"
+}

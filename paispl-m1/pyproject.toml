@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paispl-m1"
+version = "0.1.0"
+description = "PAISPL Requirement IR validation and feature configuration engine"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+paispl-m1 = "paispl_m1.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

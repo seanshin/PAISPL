@@ -1,0 +1,42 @@
+# generated-by: paispl.generated/v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emr
+  labels: &id001
+    app.kubernetes.io/name: emr
+    paispl/component-id: CMP-EMR
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: emr
+  template:
+    metadata:
+      labels: *id001
+    spec:
+      containers:
+      - name: emr
+        image: ghcr.io/paispl/emr:generated
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emr
+  labels:
+    app.kubernetes.io/name: emr
+    paispl/component-id: CMP-EMR
+spec:
+  selector:
+    app.kubernetes.io/name: emr
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http

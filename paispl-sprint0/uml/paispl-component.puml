@@ -1,0 +1,36 @@
+@startuml
+!pragma layout smetana
+title PAISPL Component Architecture
+skinparam componentStyle rectangle
+
+actor "Product Architect" as Architect
+component "Requirement Studio" as Studio
+component "Intent Compiler" as Intent
+component "Feature Engine" as Feature
+component "SAT SMT Solver" as Solver
+component "Architecture Synthesizer" as Arch
+component "Delta Planner" as Delta
+component "Agentic Builder" as Builder
+component "Verification Gate" as Verify
+database "Metadata and Trace Store" as Trace
+collections "Component Registry" as Registry
+artifact "Deployable Variant" as Variant
+
+Architect --> Studio
+Studio --> Intent : natural-language request
+Intent --> Feature : Requirement IR
+Feature --> Solver : constraints
+Solver --> Feature : valid configuration or unsat core
+Feature --> Arch : valid configuration
+Registry --> Arch : reusable assets
+Arch --> Delta : architecture graph
+Delta --> Builder : bounded change contract
+Registry --> Builder : templates and components
+Builder --> Verify : patch and tests
+Verify --> Variant : release evidence
+Intent --> Trace
+Feature --> Trace
+Arch --> Trace
+Builder --> Trace
+Verify --> Trace
+@enduml

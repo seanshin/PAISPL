@@ -1,0 +1,27 @@
+{
+  "version":"0.1.0",
+  "request_id":"CHG-HOSP-002",
+  "domain":"healthcare-platform",
+  "source_text":"외부 Cloud 사용을 중단하고 전체를 On Premise와 Kubernetes 구성으로 전환한다.",
+  "base_configuration_id":"GOLD-CHG-HOSP-001",
+  "intents":[
+    {"id":"INT-001","operation":"replace","subject":"On Premise 배포","feature_candidates":[{"feature_id":"on_premise_deployment","score":0.99}],"confidence":0.99,"source_quote":"전체를 On Premise"},
+    {"id":"INT-002","operation":"exclude","subject":"Cloud 모델","feature_candidates":[{"feature_id":"cloud_model","score":0.88}],"confidence":0.88,"source_quote":"외부 Cloud 사용을 중단"},
+    {"id":"INT-003","operation":"preserve","subject":"Kubernetes","feature_candidates":[{"feature_id":"kubernetes","score":0.99}],"confidence":0.99,"source_quote":"Kubernetes 구성"}
+  ],
+  "functional_requirements":[
+    {"id":"FR-001","statement":"모든 서비스는 On Premise에서 실행된다.","priority":"must","acceptance_test_ids":["AT-DEP-001","AT-DEP-002"]}
+  ],
+  "non_functional_requirements":[
+    {"id":"NFR-001","category":"privacy","statement":"PHI와 모델 실행은 외부 Cloud로 전송하지 않는다.","measure":"Egress Policy Test가 외부 전송을 차단해야 한다."}
+  ],
+  "constraints":[
+    {"id":"RC-001","kind":"deployment","expression":"deployment = on_premise","hard":true},
+    {"id":"RC-002","kind":"feature","expression":"cloud_model = false","hard":true}
+  ],
+  "deployment":{"profile":"on_premise","runtime":"kubernetes"},
+  "data_classes":["PHI","personal","credential","model_output"],
+  "unresolved_questions":[],
+  "metadata":{"created_at":"2026-09-22T00:02:00Z","producer":"hybrid","model_id":"design-baseline","prompt_template_version":"0.1.0"}
+}
+

@@ -1,0 +1,11 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "emr_integration"
+  ],
+  "id": "API-EMR",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-EMR",
+  "protocolFamily": "http_or_domain_api"
+}

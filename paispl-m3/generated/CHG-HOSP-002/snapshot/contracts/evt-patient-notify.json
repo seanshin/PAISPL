@@ -1,0 +1,13 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "patient_bff",
+    "patient_mobile",
+    "patient_notifications"
+  ],
+  "id": "EVT-PATIENT-NOTIFY",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-PATIENT-BFF",
+  "protocolFamily": "event"
+}

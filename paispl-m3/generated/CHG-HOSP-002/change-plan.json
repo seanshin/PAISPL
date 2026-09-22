@@ -1,0 +1,80 @@
+{
+  "configuration_id": "CFG-CHG-HOSP-002",
+  "deletion_policy": "manifest_owned_only",
+  "operations": {
+    "create": [],
+    "delete": [],
+    "no_op": [
+      "components/audit/app.py",
+      "components/audit/component.yaml",
+      "components/dicom-gw/app.py",
+      "components/dicom-gw/component.yaml",
+      "components/emr/app.py",
+      "components/emr/component.yaml",
+      "components/fhir/app.py",
+      "components/fhir/component.yaml",
+      "components/identity/app.py",
+      "components/identity/component.yaml",
+      "components/observability/app.py",
+      "components/observability/component.yaml",
+      "components/patient-bff/app.py",
+      "components/patient-bff/component.yaml",
+      "components/policy/app.py",
+      "components/policy/component.yaml",
+      "contracts/api-dicom-qido.json",
+      "contracts/api-dicom-stow.json",
+      "contracts/api-emr.json",
+      "contracts/api-fhir-r4.json",
+      "contracts/api-oidc.json",
+      "contracts/api-patient.json",
+      "contracts/api-policy-check.json",
+      "contracts/api-webauthn.json",
+      "contracts/evt-audit.json",
+      "contracts/evt-patient-notify.json",
+      "contracts/otel-export.json",
+      "deploy/k8s/audit.yaml",
+      "deploy/k8s/clinical-ai.yaml",
+      "deploy/k8s/dicom-gw.yaml",
+      "deploy/k8s/emr.yaml",
+      "deploy/k8s/fhir.yaml",
+      "deploy/k8s/identity.yaml",
+      "deploy/k8s/observability.yaml",
+      "deploy/k8s/patient-bff.yaml",
+      "deploy/k8s/policy.yaml"
+    ],
+    "update": [
+      "components/clinical-ai/app.py",
+      "components/clinical-ai/component.yaml",
+      "components/deployment/component.yaml",
+      "contracts/api-ai-infer.json",
+      "contracts/deploy-manifest.json",
+      "contracts/evt-ai-audit.json",
+      "deploy/profile.yaml",
+      "trace/traceability.json",
+      "uml/deployment.puml"
+    ]
+  },
+  "regression_test_ids": [
+    "AT-AI-001",
+    "AT-AI-003",
+    "AT-AUTH-002",
+    "AT-DATA-001",
+    "AT-DEP-001",
+    "AT-DEP-002",
+    "AT-SEC-001",
+    "AT-TRACE-001",
+    "AT-UML-001",
+    "AT-UML-002"
+  ],
+  "request_id": "CHG-HOSP-002",
+  "review_only_component_ids": [
+    "CMP-POLICY"
+  ],
+  "summary": {
+    "create": 0,
+    "delete": 0,
+    "no_op": 36,
+    "review_only": 1,
+    "update": 9
+  }
+}

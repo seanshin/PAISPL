@@ -1,0 +1,32 @@
+@startuml
+title Incremental Change Processing
+actor User
+participant Studio
+participant "Intent Compiler" as IC
+participant "Feature Engine" as FE
+participant Solver
+participant "Delta Planner" as DP
+participant "Agentic Builder" as AB
+participant "Verification Gate" as VG
+
+User -> Studio : submit change request
+Studio -> IC : request plus current configuration
+IC -> FE : typed intent delta
+FE -> Solver : current model plus requested constraints
+alt valid configuration
+  Solver --> FE : new configuration
+  FE -> DP : old and new configurations
+  DP --> AB : impacted assets and prohibited assets
+  AB -> VG : patch, migrations and tests
+  alt mandatory gates pass
+    VG --> Studio : approved variant and evidence
+    Studio --> User : configuration and change summary
+  else gate failure
+    VG --> AB : bounded repair task
+  end
+else unsatisfiable
+  Solver --> Studio : unsat core and alternatives
+  Studio --> User : clarification request
+end
+@enduml
+

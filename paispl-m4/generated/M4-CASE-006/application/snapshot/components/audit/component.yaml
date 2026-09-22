@@ -1,0 +1,15 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-AUDIT
+  name: audit
+  generator: paispl.generated/v1
+spec:
+  componentType: service
+  featureIds:
+  - audit_logging
+  - model_audit
+  interfaceIds:
+  - EVT-AUDIT
+  dependencies: []

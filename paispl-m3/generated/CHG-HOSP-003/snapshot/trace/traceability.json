@@ -1,0 +1,67 @@
+{
+  "_generator": "paispl.generated/v1",
+  "configurationId": "CFG-CHG-HOSP-003",
+  "links": [
+    {
+      "artifactPaths": [
+        "components/lis/app.py",
+        "components/lis/component.yaml",
+        "contracts/api-lis.json",
+        "deploy/k8s/lis.yaml"
+      ],
+      "componentId": "CMP-LIS",
+      "featureId": "lis_integration",
+      "intentId": "INT-001",
+      "interfaceIds": [
+        "API-LIS"
+      ],
+      "operation": "include",
+      "sourceQuote": "LIS 연계를 추가",
+      "testIds": [
+        "AT-LIS-001",
+        "AT-LIS-002"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/policy/app.py",
+        "components/policy/component.yaml",
+        "contracts/api-policy-check.json",
+        "deploy/k8s/policy.yaml"
+      ],
+      "componentId": "CMP-POLICY",
+      "featureId": "data_residency_kr",
+      "intentId": "INT-002",
+      "interfaceIds": [
+        "API-POLICY-CHECK"
+      ],
+      "operation": "include",
+      "sourceQuote": "국내 데이터 저장",
+      "testIds": [
+        "AT-DATA-001"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/identity/app.py",
+        "components/identity/component.yaml",
+        "contracts/api-oidc.json",
+        "contracts/api-webauthn.json",
+        "deploy/k8s/identity.yaml"
+      ],
+      "componentId": "CMP-IDENTITY",
+      "featureId": "abac",
+      "intentId": "INT-003",
+      "interfaceIds": [
+        "API-OIDC",
+        "API-WEBAUTHN"
+      ],
+      "operation": "include",
+      "sourceQuote": "ABAC 정책을 필수",
+      "testIds": [
+        "AT-SEC-002"
+      ]
+    }
+  ],
+  "requestId": "CHG-HOSP-003"
+}

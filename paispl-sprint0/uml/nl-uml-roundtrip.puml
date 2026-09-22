@@ -1,0 +1,28 @@
+@startuml
+!pragma layout smetana
+title Natural Language and UML Round Trip
+rectangle "Natural Language" as NL
+rectangle "Requirement IR" as IR
+rectangle "Feature Intent" as FI
+rectangle "Solver Validated Configuration" as VC
+rectangle "Architecture Graph" as AG
+rectangle "UML Projection" as UML
+rectangle "Change Proposal" as CP
+rectangle "Natural Language Explanation" as EX
+
+NL --> IR : compile with source quotes
+IR --> FI : map candidates and confidence
+FI --> VC : solve hard constraints
+VC --> AG : synthesize components and interfaces
+AG --> UML : deterministic projection
+UML --> CP : reviewed edit delta
+CP --> EX : explain affected features and requirements
+EX --> IR : approved new version
+CP --> VC : mandatory revalidation
+
+note bottom of UML
+UML is not the variability source of truth.
+Every element carries Requirement, Feature,
+Component and Interface identifiers.
+end note
+@enduml

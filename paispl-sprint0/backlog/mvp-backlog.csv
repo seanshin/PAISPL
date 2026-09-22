@@ -1,0 +1,25 @@
+id,priority,epic,title,acceptance_summary,phase
+P0-001,P0,Intent Workspace,자연어 요구 입력,원문과 요청 ID가 저장된다,M1
+P0-002,P0,Intent Workspace,Requirement IR 생성,JSON Schema 검증을 통과한다,M1
+P0-003,P0,Intent Workspace,모호성 질문 생성,임계값 미만 Intent는 실행을 차단한다,M1
+P0-004,P0,Feature Engine,Feature 후보 매핑,후보와 confidence와 source quote가 기록된다,M1
+P0-005,P0,Feature Engine,Solver 변환,Feature Model이 Solver 식으로 변환된다,M1
+P0-006,P0,Feature Engine,Unsat 설명,충돌 제약과 대안 구성이 반환된다,M1
+P0-007,P0,Variant Build,참조 아키텍처 합성,선택 Feature가 Component에 매핑된다,M2
+P0-008,P0,Variant Build,Component Registry 조회,호환 버전의 재사용 자산이 선택된다,M2
+P0-009,P0,Variant Build,Base Variant 생성,저장소가 Clean Build를 통과한다,M2
+P0-010,P0,Variant Build,시험 생성,필수 Requirement에 Test가 연결된다,M2
+P0-011,P0,Incremental Change,Feature Delta 계산,추가 제거 보존 Feature가 표시된다,M3
+P0-012,P0,Incremental Change,Impact Closure 계산,Gold Impact Recall이 1.0이다,M3
+P0-013,P0,Incremental Change,변경 계약 생성,수정 가능 및 금지 자산이 기록된다,M3
+P0-014,P0,Incremental Change,제한된 Patch 실행,금지 자산은 수정되지 않는다,M3
+P0-015,P0,Verification,Build 및 Test Gate,필수 Gate 실패 시 Release가 차단된다,M4
+P0-016,P0,Verification,SAST 및 Policy Gate,Critical 취약점과 위반이 0건이다,M4
+P0-017,P0,Traceability,Evidence Bundle,입력 모델 Solver 실행과 Test 결과가 재현된다,M4
+P1-018,P1,UML,Component UML 자동생성,Architecture Graph와 ID가 일치한다,M2
+P1-019,P1,UML,Sequence UML 자동생성,Message가 API Operation ID와 일치한다,M3
+P1-020,P1,UML,UML Change Proposal,UML 수정이 자연어 설명과 Solver 재검증으로 이어진다,M3
+P1-021,P1,Traceability,Trace Explorer,Requirement에서 Evidence까지 탐색된다,M4
+P1-022,P1,Registry,Asset Versioning,호환 Feature와 Version Range를 관리한다,M2
+P2-023,P2,Optimization,비용 목적함수,구성별 변경 및 실행 비용을 비교한다,M5
+P2-024,P2,Evaluation,UML 사용 효과 실험,UML 사용군과 미사용군의 품질과 검토 시간을 비교한다,M5

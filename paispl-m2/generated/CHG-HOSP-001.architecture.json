@@ -1,0 +1,448 @@
+{
+  "configuration_id": "CFG-CHG-HOSP-001",
+  "request_id": "CHG-HOSP-001",
+  "components": [
+    {
+      "id": "CMP-AUDIT",
+      "name": "Audit Service",
+      "type": "service",
+      "feature_ids": [
+        "audit_logging",
+        "model_audit"
+      ],
+      "interfaces": [
+        "EVT-AUDIT"
+      ]
+    },
+    {
+      "id": "CMP-CLINICAL-AI",
+      "name": "Clinical AI Service",
+      "type": "service",
+      "feature_ids": [
+        "clinical_ai_agent",
+        "cloud_model"
+      ],
+      "interfaces": [
+        "API-AI-INFER",
+        "EVT-AI-AUDIT"
+      ]
+    },
+    {
+      "id": "CMP-DEPLOYMENT",
+      "name": "Deployment Profile",
+      "type": "infrastructure",
+      "feature_ids": [
+        "edge_gateway",
+        "hybrid_deployment",
+        "kubernetes",
+        "phi_encryption",
+        "secret_manager"
+      ],
+      "interfaces": [
+        "DEPLOY-MANIFEST"
+      ]
+    },
+    {
+      "id": "CMP-DICOM-GW",
+      "name": "DICOM Gateway",
+      "type": "gateway",
+      "feature_ids": [
+        "ct_adapter",
+        "dicom_gateway",
+        "mri_adapter",
+        "pacs_integration"
+      ],
+      "interfaces": [
+        "API-DICOM-STOW",
+        "API-DICOM-QIDO"
+      ]
+    },
+    {
+      "id": "CMP-EMR",
+      "name": "EMR Connector",
+      "type": "adapter",
+      "feature_ids": [
+        "emr_integration"
+      ],
+      "interfaces": [
+        "API-EMR"
+      ]
+    },
+    {
+      "id": "CMP-FHIR",
+      "name": "FHIR Gateway",
+      "type": "gateway",
+      "feature_ids": [
+        "fhir_api"
+      ],
+      "interfaces": [
+        "API-FHIR-R4"
+      ]
+    },
+    {
+      "id": "CMP-IDENTITY",
+      "name": "Identity Service",
+      "type": "service",
+      "feature_ids": [
+        "fido2",
+        "identity",
+        "mfa",
+        "oauth2_oidc",
+        "passwordless",
+        "rbac"
+      ],
+      "interfaces": [
+        "API-OIDC",
+        "API-WEBAUTHN"
+      ]
+    },
+    {
+      "id": "CMP-OBSERVABILITY",
+      "name": "Observability Stack",
+      "type": "platform",
+      "feature_ids": [
+        "distributed_tracing",
+        "monitoring"
+      ],
+      "interfaces": [
+        "OTEL-EXPORT"
+      ]
+    },
+    {
+      "id": "CMP-PATIENT-BFF",
+      "name": "Patient BFF",
+      "type": "service",
+      "feature_ids": [
+        "patient_bff",
+        "patient_mobile",
+        "patient_notifications"
+      ],
+      "interfaces": [
+        "API-PATIENT",
+        "EVT-PATIENT-NOTIFY"
+      ]
+    },
+    {
+      "id": "CMP-POLICY",
+      "name": "Policy Enforcement Service",
+      "type": "service",
+      "feature_ids": [
+        "data_residency_kr",
+        "network_policy",
+        "zero_trust"
+      ],
+      "interfaces": [
+        "API-POLICY-CHECK"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "CMP-PATIENT-BFF",
+      "target": "CMP-IDENTITY",
+      "kind": "api"
+    },
+    {
+      "source": "CMP-PATIENT-BFF",
+      "target": "CMP-FHIR",
+      "kind": "api"
+    },
+    {
+      "source": "CMP-FHIR",
+      "target": "CMP-EMR",
+      "kind": "api"
+    },
+    {
+      "source": "CMP-CLINICAL-AI",
+      "target": "CMP-DICOM-GW",
+      "kind": "api"
+    },
+    {
+      "source": "CMP-CLINICAL-AI",
+      "target": "CMP-AUDIT",
+      "kind": "event"
+    },
+    {
+      "source": "CMP-IDENTITY",
+      "target": "CMP-POLICY",
+      "kind": "policy"
+    },
+    {
+      "source": "CMP-PATIENT-BFF",
+      "target": "CMP-AUDIT",
+      "kind": "event"
+    },
+    {
+      "source": "CMP-DICOM-GW",
+      "target": "CMP-AUDIT",
+      "kind": "event"
+    },
+    {
+      "source": "CMP-EMR",
+      "target": "CMP-AUDIT",
+      "kind": "event"
+    },
+    {
+      "source": "CMP-CLINICAL-AI",
+      "target": "CMP-DEPLOYMENT",
+      "kind": "deployment"
+    },
+    {
+      "source": "CMP-PATIENT-BFF",
+      "target": "CMP-DEPLOYMENT",
+      "kind": "deployment"
+    },
+    {
+      "source": "CMP-OBSERVABILITY",
+      "target": "CMP-DEPLOYMENT",
+      "kind": "deployment"
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "EVT-AUDIT",
+      "owner_component_id": "CMP-AUDIT",
+      "feature_ids": [
+        "audit_logging",
+        "model_audit"
+      ]
+    },
+    {
+      "id": "API-AI-INFER",
+      "owner_component_id": "CMP-CLINICAL-AI",
+      "feature_ids": [
+        "clinical_ai_agent",
+        "cloud_model"
+      ]
+    },
+    {
+      "id": "EVT-AI-AUDIT",
+      "owner_component_id": "CMP-CLINICAL-AI",
+      "feature_ids": [
+        "clinical_ai_agent",
+        "cloud_model"
+      ]
+    },
+    {
+      "id": "DEPLOY-MANIFEST",
+      "owner_component_id": "CMP-DEPLOYMENT",
+      "feature_ids": [
+        "edge_gateway",
+        "hybrid_deployment",
+        "kubernetes",
+        "phi_encryption",
+        "secret_manager"
+      ]
+    },
+    {
+      "id": "API-DICOM-STOW",
+      "owner_component_id": "CMP-DICOM-GW",
+      "feature_ids": [
+        "ct_adapter",
+        "dicom_gateway",
+        "mri_adapter",
+        "pacs_integration"
+      ]
+    },
+    {
+      "id": "API-DICOM-QIDO",
+      "owner_component_id": "CMP-DICOM-GW",
+      "feature_ids": [
+        "ct_adapter",
+        "dicom_gateway",
+        "mri_adapter",
+        "pacs_integration"
+      ]
+    },
+    {
+      "id": "API-EMR",
+      "owner_component_id": "CMP-EMR",
+      "feature_ids": [
+        "emr_integration"
+      ]
+    },
+    {
+      "id": "API-FHIR-R4",
+      "owner_component_id": "CMP-FHIR",
+      "feature_ids": [
+        "fhir_api"
+      ]
+    },
+    {
+      "id": "API-OIDC",
+      "owner_component_id": "CMP-IDENTITY",
+      "feature_ids": [
+        "fido2",
+        "identity",
+        "mfa",
+        "oauth2_oidc",
+        "passwordless",
+        "rbac"
+      ]
+    },
+    {
+      "id": "API-WEBAUTHN",
+      "owner_component_id": "CMP-IDENTITY",
+      "feature_ids": [
+        "fido2",
+        "identity",
+        "mfa",
+        "oauth2_oidc",
+        "passwordless",
+        "rbac"
+      ]
+    },
+    {
+      "id": "OTEL-EXPORT",
+      "owner_component_id": "CMP-OBSERVABILITY",
+      "feature_ids": [
+        "distributed_tracing",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "API-PATIENT",
+      "owner_component_id": "CMP-PATIENT-BFF",
+      "feature_ids": [
+        "patient_bff",
+        "patient_mobile",
+        "patient_notifications"
+      ]
+    },
+    {
+      "id": "EVT-PATIENT-NOTIFY",
+      "owner_component_id": "CMP-PATIENT-BFF",
+      "feature_ids": [
+        "patient_bff",
+        "patient_mobile",
+        "patient_notifications"
+      ]
+    },
+    {
+      "id": "API-POLICY-CHECK",
+      "owner_component_id": "CMP-POLICY",
+      "feature_ids": [
+        "data_residency_kr",
+        "network_policy",
+        "zero_trust"
+      ]
+    }
+  ],
+  "component_delta": {
+    "added": [
+      "CMP-PATIENT-BFF"
+    ],
+    "removed": [],
+    "preserved": [
+      "CMP-AUDIT",
+      "CMP-CLINICAL-AI",
+      "CMP-DEPLOYMENT",
+      "CMP-DICOM-GW",
+      "CMP-EMR",
+      "CMP-FHIR",
+      "CMP-IDENTITY",
+      "CMP-OBSERVABILITY",
+      "CMP-POLICY"
+    ]
+  },
+  "impact": {
+    "add_or_modify": [
+      "CMP-AUDIT",
+      "CMP-FHIR",
+      "CMP-IDENTITY",
+      "CMP-PATIENT-BFF"
+    ],
+    "remove_or_disable": [
+      "CMP-CLINICAL-AI"
+    ],
+    "preserve": [
+      "CMP-DEPLOYMENT",
+      "CMP-DICOM-GW",
+      "CMP-EMR",
+      "CMP-OBSERVABILITY",
+      "CMP-POLICY"
+    ],
+    "reasons": {
+      "CMP-AUDIT": [
+        "new_dependency:CMP-PATIENT-BFF:event"
+      ],
+      "CMP-CLINICAL-AI": [
+        "feature_removed:ai_diagnosis"
+      ],
+      "CMP-FHIR": [
+        "new_dependency:CMP-PATIENT-BFF:api"
+      ],
+      "CMP-IDENTITY": [
+        "feature_added:oauth2_oidc",
+        "new_dependency:CMP-PATIENT-BFF:api"
+      ],
+      "CMP-PATIENT-BFF": [
+        "feature_added:patient_bff",
+        "feature_added:patient_mobile",
+        "feature_added:patient_notifications"
+      ]
+    }
+  },
+  "test_scope": [
+    "AT-AI-001",
+    "AT-AI-002",
+    "AT-AI-003",
+    "AT-AUTH-001",
+    "AT-AUTH-002",
+    "AT-EMR-001",
+    "AT-MOB-001",
+    "AT-MOB-002",
+    "AT-SEC-002",
+    "AT-TRACE-001",
+    "AT-UML-001",
+    "AT-UML-002"
+  ],
+  "trace_links": [
+    {
+      "intent_id": "INT-001",
+      "feature_id": "ai_diagnosis",
+      "operation": "exclude",
+      "source_quote": "AI 판독 기능은 제외",
+      "component_id": "CMP-CLINICAL-AI",
+      "component_active": true,
+      "interface_ids": [
+        "API-AI-INFER",
+        "EVT-AI-AUDIT"
+      ],
+      "test_ids": [
+        "AT-AI-001",
+        "AT-AI-003"
+      ]
+    },
+    {
+      "intent_id": "INT-002",
+      "feature_id": "patient_mobile",
+      "operation": "include",
+      "source_quote": "환자용 모바일 서비스를 추가",
+      "component_id": "CMP-PATIENT-BFF",
+      "component_active": true,
+      "interface_ids": [
+        "API-PATIENT",
+        "EVT-PATIENT-NOTIFY"
+      ],
+      "test_ids": [
+        "AT-MOB-001"
+      ]
+    },
+    {
+      "intent_id": "INT-003",
+      "feature_id": "patient_notifications",
+      "operation": "include",
+      "source_quote": "알림을 추가",
+      "component_id": "CMP-PATIENT-BFF",
+      "component_active": true,
+      "interface_ids": [
+        "API-PATIENT",
+        "EVT-PATIENT-NOTIFY"
+      ],
+      "test_ids": [
+        "AT-MOB-002"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+# generated-by: paispl.generated/v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patient-bff
+  labels: &id001
+    app.kubernetes.io/name: patient-bff
+    paispl/component-id: CMP-PATIENT-BFF
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: patient-bff
+  template:
+    metadata:
+      labels: *id001
+    spec:
+      containers:
+      - name: patient-bff
+        image: ghcr.io/paispl/patient-bff:generated
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: patient-bff
+  labels:
+    app.kubernetes.io/name: patient-bff
+    paispl/component-id: CMP-PATIENT-BFF
+spec:
+  selector:
+    app.kubernetes.io/name: patient-bff
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http

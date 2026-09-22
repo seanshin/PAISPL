@@ -1,0 +1,27 @@
+{
+  "version": "0.4.0",
+  "proposal_id": "CP-M4-003",
+  "request_id": "UML-CASE-003",
+  "base_configuration_id": "GOLD-CHG-HOSP-002",
+  "base_architecture_hash": "37ba19ad2b794ebe7144e4c8ff3f220d9b3dabae7245793394b676be37223f28",
+  "origin_uml": {
+    "model_id": "UML-ARCH-CHG-HOSP-002",
+    "model_path": "paispl-m2/generated/CHG-HOSP-002.component.puml",
+    "element_ids": ["CMP-UNKNOWN"]
+  },
+  "edit_type": "addition",
+  "rationale": "알 수 없는 UML 컴포넌트에서 LIS 기능을 추가한다.",
+  "operations": [
+    {
+      "operation_id": "CPO-001",
+      "kind": "include_feature",
+      "source_id": "CMP-UNKNOWN",
+      "target_id": "lis_integration",
+      "source_quote": "알 수 없는 컴포넌트를 추가한다."
+    }
+  ],
+  "proposer": {"id": "M4-FIXTURE-AUTHOR", "type": "test_fixture"},
+  "created_at": "2026-09-22T01:02:00Z",
+  "status": "DRAFT",
+  "required_approval_policy": "human-explicit-v1"
+}

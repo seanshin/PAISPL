@@ -1,0 +1,42 @@
+catalog_version: 0.1.0
+domain: healthcare-platform
+features:
+  - {id: healthcare_platform, name_ko: 의료 플랫폼, category: core, risk: high}
+  - {id: identity, name_ko: 통합 인증, category: security, risk: high}
+  - {id: passwordless, name_ko: 패스워드리스, category: security, risk: high}
+  - {id: fido2, name_ko: FIDO2 WebAuthn, category: security, risk: high}
+  - {id: mfa, name_ko: 다중요소 인증, category: security, risk: high}
+  - {id: oauth2_oidc, name_ko: OAuth2 OIDC, category: security, risk: high}
+  - {id: rbac, name_ko: 역할 기반 접근제어, category: security, risk: high}
+  - {id: abac, name_ko: 속성 기반 접근제어, category: security, risk: high}
+  - {id: zero_trust, name_ko: 제로 트러스트, category: security, risk: high}
+  - {id: network_policy, name_ko: 네트워크 정책, category: security, risk: high}
+  - {id: secret_manager, name_ko: 시크릿 관리, category: security, risk: high}
+  - {id: audit_logging, name_ko: 감사 로그, category: governance, risk: high}
+  - {id: phi_encryption, name_ko: PHI 암호화, category: privacy, risk: high}
+  - {id: data_residency_kr, name_ko: 국내 데이터 저장, category: privacy, risk: high}
+  - {id: cloud_deployment, name_ko: 퍼블릭 클라우드 배포, category: deployment, risk: medium}
+  - {id: on_premise_deployment, name_ko: 온프레미스 배포, category: deployment, risk: medium}
+  - {id: hybrid_deployment, name_ko: 하이브리드 배포, category: deployment, risk: medium}
+  - {id: edge_gateway, name_ko: 병원 Edge Gateway, category: deployment, risk: medium}
+  - {id: docker_compose, name_ko: Docker Compose 실행, category: runtime, risk: low}
+  - {id: kubernetes, name_ko: Kubernetes 실행, category: runtime, risk: medium}
+  - {id: emr_integration, name_ko: EMR 연계, category: integration, risk: high}
+  - {id: fhir_api, name_ko: FHIR API, category: integration, risk: high}
+  - {id: his_integration, name_ko: HIS 연계, category: integration, risk: high}
+  - {id: lis_integration, name_ko: LIS 연계, category: integration, risk: high}
+  - {id: pacs_integration, name_ko: PACS 연계, category: imaging, risk: high}
+  - {id: dicom_gateway, name_ko: DICOM Gateway, category: imaging, risk: high}
+  - {id: mri_adapter, name_ko: MRI Adapter, category: imaging, risk: high}
+  - {id: ct_adapter, name_ko: CT Adapter, category: imaging, risk: high}
+  - {id: clinical_ai_agent, name_ko: 의료 AI Agent, category: ai, risk: high}
+  - {id: ai_diagnosis, name_ko: AI 판독, category: ai, risk: high}
+  - {id: local_model, name_ko: 로컬 AI 모델, category: ai, risk: high}
+  - {id: cloud_model, name_ko: 클라우드 AI 모델, category: ai, risk: high}
+  - {id: model_audit, name_ko: 모델 실행 감사, category: ai, risk: high}
+  - {id: patient_mobile, name_ko: 환자 모바일 서비스, category: patient, risk: high}
+  - {id: patient_bff, name_ko: 환자용 BFF, category: patient, risk: high}
+  - {id: patient_notifications, name_ko: 환자 알림, category: patient, risk: medium}
+  - {id: monitoring, name_ko: 운영 모니터링, category: observability, risk: medium}
+  - {id: distributed_tracing, name_ko: 분산 추적, category: observability, risk: medium}
+

@@ -1,0 +1,168 @@
+{
+  "package": "PAISPL Sprint 0 Design Package",
+  "version": "0.1.0",
+  "built_at": "2026-09-22T07:11:11.375751+00:00",
+  "validation_report": "VALIDATION_REPORT.md",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 2261,
+      "sha256": "b7751509419545872c0d115cbed7677ebaf3e63a5542250b7f1847d2f0b5e003"
+    },
+    {
+      "path": "VALIDATION_REPORT.md",
+      "size": 800,
+      "sha256": "d557e196730ab287c23dd2697ca7fa130bc1158673d2e4ca72739ea3e9bc1332"
+    },
+    {
+      "path": "adr/ADR-001-hybrid-reasoning.md",
+      "size": 802,
+      "sha256": "1985ff5ec6de46b6e49119124f809c2618e5a0389c3537a15e16219bb2028900"
+    },
+    {
+      "path": "adr/ADR-002-delta-regeneration.md",
+      "size": 795,
+      "sha256": "f7c504f021059543fafac404ad53a59bd898486d9f08bb396b4fdeec8af0a1a6"
+    },
+    {
+      "path": "architecture/reference-architecture.yaml",
+      "size": 3227,
+      "sha256": "c8ce2b8ac603d2e44545dffbbbfb319e3481359a79bca74532d94cfc01ccdb59"
+    },
+    {
+      "path": "backlog/mvp-backlog.csv",
+      "size": 2318,
+      "sha256": "4dea388e9e388480889325f7f22c3f8c140143e3d733a48f7637db5d7d636299"
+    },
+    {
+      "path": "catalog/healthcare-features.yaml",
+      "size": 3219,
+      "sha256": "d58ef408c0f4271f7b41421dc950315320771343d67459a9e38f7643a6bc7dd7"
+    },
+    {
+      "path": "docs/01-scope.md",
+      "size": 1784,
+      "sha256": "7c8b42c533391c61a786f08b3e8db4ce850f23b4b9185edfd13e8ee1cd560f2c"
+    },
+    {
+      "path": "docs/02-uml-strategy.md",
+      "size": 3485,
+      "sha256": "89b3bf97c562515e07427eaf654aca11bff62d72236f271d45663b76d82b8573"
+    },
+    {
+      "path": "docs/03-natural-language-uml-relationship.md",
+      "size": 5588,
+      "sha256": "96efd7dfc3ac74406a12c0871ee5d67c8e2702384f81c73ab339811ee8eb5115"
+    },
+    {
+      "path": "examples/BASE-HOSP-001.requirement-ir.json",
+      "size": 4596,
+      "sha256": "da04f3cde7f797c3d4e4d5f94960a5001f742fe9424ddb6bb0b121a9e0b1bf79"
+    },
+    {
+      "path": "examples/CHG-HOSP-001.requirement-ir.json",
+      "size": 1857,
+      "sha256": "3270b6bf121c138989bf04b09c688c43eb138d65710801745f6256bb8d8d4ce0"
+    },
+    {
+      "path": "examples/CHG-HOSP-002.requirement-ir.json",
+      "size": 1772,
+      "sha256": "614035674fc51621af77d4061a80cf121abbfd64f59bbeec5dfd4db422311d11"
+    },
+    {
+      "path": "examples/CHG-HOSP-003.requirement-ir.json",
+      "size": 1949,
+      "sha256": "f56be547c844d13f8ed3e628a687f2e0a8a9dc60bba75b64485d8a900e9a903d"
+    },
+    {
+      "path": "gold/gold-configurations.yaml",
+      "size": 3149,
+      "sha256": "269b91256ea3510762df8da1f6b7eab49ce7080db6d12e71e25e85270be51fc2"
+    },
+    {
+      "path": "mappings/nl-uml-trace-rules.yaml",
+      "size": 1888,
+      "sha256": "85319cb67d7d27d46d572391708700cba2994a4fa7b260111ea001e3810a1be9"
+    },
+    {
+      "path": "models/healthcare-feature-model.yaml",
+      "size": 4942,
+      "sha256": "16ac8bb8ee04896c3ed2224fb68f24a59194b31fd188952c065ed6885d7c23e5"
+    },
+    {
+      "path": "scenarios/base-and-changes.yaml",
+      "size": 1414,
+      "sha256": "b56b758bbed8146941316714cf0ac1c57130df2a66d065c353ac1bcba7e2522f"
+    },
+    {
+      "path": "schemas/requirement-ir.schema.json",
+      "size": 4789,
+      "sha256": "31dd0550613e039c662be734fe05935867f6db582a24feb5d5c1a1b0144c6905"
+    },
+    {
+      "path": "tests/acceptance-tests.yaml",
+      "size": 3490,
+      "sha256": "d7ab2d45ec9a4e2b91fcd8acceb96d955946712d96d46bacb880f3c614d342e2"
+    },
+    {
+      "path": "tools/build_package.py",
+      "size": 1479,
+      "sha256": "055f951ac360ed562ab2d56e6c86916aac4f115d9101bf8fe14006096eef2e6c"
+    },
+    {
+      "path": "tools/validate_sprint0.py",
+      "size": 12613,
+      "sha256": "21cddeaae7de340abf2c07d8ca8f20c50dd1ab9f3d925c0c6583c6b9b18ee93d"
+    },
+    {
+      "path": "uml/incremental-change-sequence.puml",
+      "size": 961,
+      "sha256": "e57a08bb8b9b0998b1ac75cc1957f6fb612f8525d66e5e099d85955d6753f8df"
+    },
+    {
+      "path": "uml/nl-uml-roundtrip.puml",
+      "size": 899,
+      "sha256": "5fa8611867156dc90239e58c559cddf814f2e88b04909fe9a1700a4015af9812"
+    },
+    {
+      "path": "uml/paispl-component.puml",
+      "size": 1150,
+      "sha256": "0352fb79902363337346282246b02505f2a2df4669a045cdaa27511944ed2843"
+    },
+    {
+      "path": "uml/requirement-to-variant-activity.puml",
+      "size": 696,
+      "sha256": "c8b0c592018af8833d5db90693c8f11bcdb638f3e54a03c0391940a725ecdfaa"
+    },
+    {
+      "path": "uml/traceability-domain.puml",
+      "size": 686,
+      "sha256": "38101a37cc60b7c08f10758d32b64638ccd0736a5a2d0d1e10fc2d8fe0087653"
+    },
+    {
+      "path": "uml-rendered/incremental-change-sequence.png",
+      "size": 64225,
+      "sha256": "258dd2f20dbf3fbbabe9d6a92105007d13c5d778798bf50204d22b062d916014"
+    },
+    {
+      "path": "uml-rendered/nl-uml-roundtrip.png",
+      "size": 52527,
+      "sha256": "f6c29e4524fba11f1938426dd074e5ebfaa73fe8dba017b769f1a16017575dd3"
+    },
+    {
+      "path": "uml-rendered/paispl-component.png",
+      "size": 64260,
+      "sha256": "e5e1c0232146031df202b2863ab285b54264c11d96fc100aab4a025bdb9bbaa5"
+    },
+    {
+      "path": "uml-rendered/requirement-to-variant-activity.png",
+      "size": 46401,
+      "sha256": "a6baf22331cae14075f9d8e69c1666fe5529a0f6a6c65c5483792aa62a85327e"
+    },
+    {
+      "path": "uml-rendered/traceability-domain.png",
+      "size": 40294,
+      "sha256": "49f5a0564240df1a9c20e741d5cb526146522e8db790714357fc6100a7f2eb76"
+    }
+  ]
+}

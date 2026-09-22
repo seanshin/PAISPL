@@ -1,0 +1,11 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "lis_integration"
+  ],
+  "id": "API-LIS",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-LIS",
+  "protocolFamily": "http_or_domain_api"
+}

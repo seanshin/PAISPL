@@ -1,0 +1,25 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-CLINICAL-AI
+  name: clinical-ai
+  generator: paispl.generated/v1
+spec:
+  componentType: service
+  featureIds:
+  - clinical_ai_agent
+  - cloud_model
+  interfaceIds:
+  - API-AI-INFER
+  - EVT-AI-AUDIT
+  dependencies:
+  - source: CMP-CLINICAL-AI
+    target: CMP-AUDIT
+    kind: event
+  - source: CMP-CLINICAL-AI
+    target: CMP-DEPLOYMENT
+    kind: deployment
+  - source: CMP-CLINICAL-AI
+    target: CMP-DICOM-GW
+    kind: api

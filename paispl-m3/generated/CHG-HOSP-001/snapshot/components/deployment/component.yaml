@@ -1,0 +1,18 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-DEPLOYMENT
+  name: deployment
+  generator: paispl.generated/v1
+spec:
+  componentType: infrastructure
+  featureIds:
+  - edge_gateway
+  - hybrid_deployment
+  - kubernetes
+  - phi_encryption
+  - secret_manager
+  interfaceIds:
+  - DEPLOY-MANIFEST
+  dependencies: []

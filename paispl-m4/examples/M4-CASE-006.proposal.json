@@ -1,0 +1,27 @@
+{
+  "version": "0.4.0",
+  "proposal_id": "CP-M4-006",
+  "request_id": "UML-CASE-006",
+  "base_configuration_id": "GOLD-CHG-HOSP-002",
+  "base_architecture_hash": "37ba19ad2b794ebe7144e4c8ff3f220d9b3dabae7245793394b676be37223f28",
+  "origin_uml": {
+    "model_id": "UML-ARCH-CHG-HOSP-002",
+    "model_path": "paispl-m2/generated/CHG-HOSP-002.component.puml",
+    "element_ids": ["CMP-LIS"]
+  },
+  "edit_type": "addition",
+  "rationale": "승인된 LIS 검사 결과 연계를 아키텍처에 추가한다.",
+  "operations": [
+    {
+      "operation_id": "CPO-001",
+      "kind": "include_feature",
+      "source_id": "CMP-LIS",
+      "target_id": "lis_integration",
+      "source_quote": "승인 대상으로 LIS 연계를 추가한다."
+    }
+  ],
+  "proposer": {"id": "M4-FIXTURE-AUTHOR", "type": "test_fixture"},
+  "created_at": "2026-09-22T01:05:00Z",
+  "status": "DRAFT",
+  "required_approval_policy": "human-explicit-v1"
+}

@@ -1,0 +1,62 @@
+mapping_version: 0.1.0
+pipeline:
+  - natural_language
+  - requirement_ir
+  - feature_intent
+  - solver_validated_configuration
+  - architecture_graph
+  - uml_projection
+rules:
+  - id: MAP-001
+    from: requirement_ir.functional_requirements[].id
+    to: uml.element.tagged_values.reqIds
+    cardinality: many_to_many
+    required: true
+  - id: MAP-002
+    from: requirement_ir.non_functional_requirements[].id
+    to: uml.element.tagged_values.nfrIds
+    cardinality: many_to_many
+    required: true
+  - id: MAP-003
+    from: requirement_ir.intents[].id
+    to: uml.element.tagged_values.intentIds
+    cardinality: many_to_many
+    required: true
+  - id: MAP-004
+    from: feature_configuration.selected[]
+    to: uml.component.tagged_values.featureIds
+    cardinality: many_to_many
+    required: true
+  - id: MAP-005
+    from: architecture_graph.components[].id
+    to: uml.component.tagged_values.componentId
+    cardinality: one_to_one
+    required: true
+  - id: MAP-006
+    from: architecture_graph.interfaces[].operation_id
+    to: uml.sequence.message.operation_id
+    cardinality: one_to_one
+    required: true
+  - id: MAP-007
+    from: acceptance_tests[].id
+    to: uml.element.tagged_values.testIds
+    cardinality: many_to_many
+    required: false
+round_trip_guards:
+  - id: RT-001
+    assertion: requirement_id_set_before == requirement_id_set_after
+  - id: RT-002
+    assertion: feature_id_set_before == feature_id_set_after
+  - id: RT-003
+    assertion: every_uml_component_has_component_id
+  - id: RT-004
+    assertion: every_sequence_message_resolves_to_interface_operation
+  - id: RT-005
+    assertion: uml_edit_never_bypasses_solver_validation
+edit_policy:
+  generated_elements_are_read_only: true
+  user_edits_create_change_proposal: true
+  require_natural_language_explanation: true
+  require_solver_revalidation: true
+  require_human_approval_for_feature_delta: true
+

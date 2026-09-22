@@ -1,0 +1,21 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-DICOM-GW
+  name: dicom-gw
+  generator: paispl.generated/v1
+spec:
+  componentType: gateway
+  featureIds:
+  - ct_adapter
+  - dicom_gateway
+  - mri_adapter
+  - pacs_integration
+  interfaceIds:
+  - API-DICOM-STOW
+  - API-DICOM-QIDO
+  dependencies:
+  - source: CMP-DICOM-GW
+    target: CMP-AUDIT
+    kind: event

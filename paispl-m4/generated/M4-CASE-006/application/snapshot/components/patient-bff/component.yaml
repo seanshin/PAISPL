@@ -1,0 +1,29 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-PATIENT-BFF
+  name: patient-bff
+  generator: paispl.generated/v1
+spec:
+  componentType: service
+  featureIds:
+  - patient_bff
+  - patient_mobile
+  - patient_notifications
+  interfaceIds:
+  - API-PATIENT
+  - EVT-PATIENT-NOTIFY
+  dependencies:
+  - source: CMP-PATIENT-BFF
+    target: CMP-AUDIT
+    kind: event
+  - source: CMP-PATIENT-BFF
+    target: CMP-DEPLOYMENT
+    kind: deployment
+  - source: CMP-PATIENT-BFF
+    target: CMP-FHIR
+    kind: api
+  - source: CMP-PATIENT-BFF
+    target: CMP-IDENTITY
+    kind: api

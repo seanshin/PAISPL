@@ -1,0 +1,236 @@
+{
+  "_generator": "paispl.generated/v1",
+  "configurationId": "CFG-REQ-HOSP-001",
+  "links": [
+    {
+      "artifactPaths": [
+        "components/identity/app.py",
+        "components/identity/component.yaml",
+        "contracts/api-oidc.json",
+        "contracts/api-webauthn.json",
+        "deploy/k8s/identity.yaml"
+      ],
+      "componentId": "CMP-IDENTITY",
+      "featureId": "passwordless",
+      "intentId": "INT-001",
+      "interfaceIds": [
+        "API-OIDC",
+        "API-WEBAUTHN"
+      ],
+      "operation": "include",
+      "sourceQuote": "Passwordless와 MFA",
+      "testIds": [
+        "AT-AUTH-001"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/identity/app.py",
+        "components/identity/component.yaml",
+        "contracts/api-oidc.json",
+        "contracts/api-webauthn.json",
+        "deploy/k8s/identity.yaml"
+      ],
+      "componentId": "CMP-IDENTITY",
+      "featureId": "mfa",
+      "intentId": "INT-002",
+      "interfaceIds": [
+        "API-OIDC",
+        "API-WEBAUTHN"
+      ],
+      "operation": "include",
+      "sourceQuote": "Passwordless와 MFA",
+      "testIds": [
+        "AT-AUTH-002"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/policy/app.py",
+        "components/policy/component.yaml",
+        "contracts/api-policy-check.json",
+        "deploy/k8s/policy.yaml"
+      ],
+      "componentId": "CMP-POLICY",
+      "featureId": "zero_trust",
+      "intentId": "INT-003",
+      "interfaceIds": [
+        "API-POLICY-CHECK"
+      ],
+      "operation": "include",
+      "sourceQuote": "Zero Trust 정책",
+      "testIds": [
+        "AT-AUTH-002"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/emr/app.py",
+        "components/emr/component.yaml",
+        "contracts/api-emr.json",
+        "deploy/k8s/emr.yaml"
+      ],
+      "componentId": "CMP-EMR",
+      "featureId": "emr_integration",
+      "intentId": "INT-004",
+      "interfaceIds": [
+        "API-EMR"
+      ],
+      "operation": "include",
+      "sourceQuote": "클라우드 EMR을 사용",
+      "testIds": [
+        "AT-EMR-001",
+        "AT-LIS-002"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/dicom-gw/app.py",
+        "components/dicom-gw/component.yaml",
+        "contracts/api-dicom-qido.json",
+        "contracts/api-dicom-stow.json",
+        "deploy/k8s/dicom-gw.yaml"
+      ],
+      "componentId": "CMP-DICOM-GW",
+      "featureId": "pacs_integration",
+      "intentId": "INT-005",
+      "interfaceIds": [
+        "API-DICOM-QIDO",
+        "API-DICOM-STOW"
+      ],
+      "operation": "include",
+      "sourceQuote": "PACS와 MRI 및 CT",
+      "testIds": []
+    },
+    {
+      "artifactPaths": [
+        "components/dicom-gw/app.py",
+        "components/dicom-gw/component.yaml",
+        "contracts/api-dicom-qido.json",
+        "contracts/api-dicom-stow.json",
+        "deploy/k8s/dicom-gw.yaml"
+      ],
+      "componentId": "CMP-DICOM-GW",
+      "featureId": "mri_adapter",
+      "intentId": "INT-006",
+      "interfaceIds": [
+        "API-DICOM-QIDO",
+        "API-DICOM-STOW"
+      ],
+      "operation": "include",
+      "sourceQuote": "MRI 및 CT의 DICOM 연동",
+      "testIds": [
+        "AT-IMG-001"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/dicom-gw/app.py",
+        "components/dicom-gw/component.yaml",
+        "contracts/api-dicom-qido.json",
+        "contracts/api-dicom-stow.json",
+        "deploy/k8s/dicom-gw.yaml"
+      ],
+      "componentId": "CMP-DICOM-GW",
+      "featureId": "ct_adapter",
+      "intentId": "INT-007",
+      "interfaceIds": [
+        "API-DICOM-QIDO",
+        "API-DICOM-STOW"
+      ],
+      "operation": "include",
+      "sourceQuote": "MRI 및 CT의 DICOM 연동",
+      "testIds": [
+        "AT-IMG-002"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/clinical-ai/app.py",
+        "components/clinical-ai/component.yaml",
+        "contracts/api-ai-infer.json",
+        "contracts/evt-ai-audit.json",
+        "deploy/k8s/clinical-ai.yaml"
+      ],
+      "componentId": "CMP-CLINICAL-AI",
+      "featureId": "clinical_ai_agent",
+      "intentId": "INT-008",
+      "interfaceIds": [
+        "API-AI-INFER",
+        "EVT-AI-AUDIT"
+      ],
+      "operation": "include",
+      "sourceQuote": "의료 AI Agent와 AI 판독",
+      "testIds": [
+        "AT-AI-001"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/clinical-ai/app.py",
+        "components/clinical-ai/component.yaml",
+        "contracts/api-ai-infer.json",
+        "contracts/evt-ai-audit.json",
+        "deploy/k8s/clinical-ai.yaml"
+      ],
+      "componentId": "CMP-CLINICAL-AI",
+      "featureId": "ai_diagnosis",
+      "intentId": "INT-009",
+      "interfaceIds": [
+        "API-AI-INFER",
+        "EVT-AI-AUDIT"
+      ],
+      "operation": "include",
+      "sourceQuote": "AI 판독",
+      "testIds": [
+        "AT-AI-001",
+        "AT-AI-003"
+      ]
+    },
+    {
+      "artifactPaths": [],
+      "componentId": "CMP-PATIENT-BFF",
+      "featureId": "patient_mobile",
+      "intentId": "INT-010",
+      "interfaceIds": [],
+      "operation": "exclude",
+      "sourceQuote": "환자용 모바일 앱은 제외",
+      "testIds": []
+    },
+    {
+      "artifactPaths": [
+        "components/deployment/component.yaml",
+        "contracts/deploy-manifest.json",
+        "deploy/profile.yaml"
+      ],
+      "componentId": "CMP-DEPLOYMENT",
+      "featureId": "hybrid_deployment",
+      "intentId": "INT-011",
+      "interfaceIds": [
+        "DEPLOY-MANIFEST"
+      ],
+      "operation": "include",
+      "sourceQuote": "하이브리드 Kubernetes로 배포",
+      "testIds": []
+    },
+    {
+      "artifactPaths": [
+        "components/deployment/component.yaml",
+        "contracts/deploy-manifest.json",
+        "deploy/profile.yaml"
+      ],
+      "componentId": "CMP-DEPLOYMENT",
+      "featureId": "kubernetes",
+      "intentId": "INT-012",
+      "interfaceIds": [
+        "DEPLOY-MANIFEST"
+      ],
+      "operation": "include",
+      "sourceQuote": "Kubernetes로 배포",
+      "testIds": [
+        "AT-DEP-001"
+      ]
+    }
+  ],
+  "requestId": "BASE-HOSP-001"
+}

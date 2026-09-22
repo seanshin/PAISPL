@@ -1,0 +1,17 @@
+policy_version: 0.3.0
+output_namespace: generated
+ownership_marker: paispl.generated/v1
+deletion_policy: manifest_owned_only
+manual_edit_policy: reject_generated_file_drift
+container_registry: ghcr.io/paispl
+container_tag: generated
+runtime_port: 8080
+replicas: 1
+artifact_kinds:
+  - component_descriptor
+  - code_scaffold
+  - interface_contract
+  - kubernetes_manifest
+  - deployment_profile
+  - traceability_manifest
+  - uml_projection

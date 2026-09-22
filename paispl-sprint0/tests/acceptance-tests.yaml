@@ -1,0 +1,23 @@
+test_version: 0.1.0
+tests:
+  - {id: AT-AUTH-001, level: integration, requirement_ids: [FR-001], feature_ids: [passwordless, fido2], assertion: FIDO2 등록 사용자가 암호 없이 인증에 성공한다.}
+  - {id: AT-AUTH-002, level: policy, requirement_ids: [FR-001], feature_ids: [mfa, zero_trust], assertion: 보호 자원 접근에는 MFA와 정책 검사가 필요하다.}
+  - {id: AT-IMG-001, level: contract, requirement_ids: [FR-002], feature_ids: [dicom_gateway, mri_adapter], assertion: MRI DICOM 객체가 STOW RS 계약으로 수신된다.}
+  - {id: AT-IMG-002, level: contract, requirement_ids: [FR-002], feature_ids: [dicom_gateway, ct_adapter], assertion: CT Study가 QIDO RS로 조회된다.}
+  - {id: AT-AI-001, level: integration, requirement_ids: [FR-003], feature_ids: [clinical_ai_agent, ai_diagnosis], assertion: 영상 Study가 AI 판독 작업으로 전달된다.}
+  - {id: AT-AI-002, level: audit, requirement_ids: [FR-003], feature_ids: [model_audit, audit_logging], assertion: 모든 모델 실행에 입력 버전과 결과 ID가 기록된다.}
+  - {id: AT-AI-003, level: negative, requirement_ids: [FR-001], feature_ids: [ai_diagnosis], assertion: CHG HOSP 001 이후 AI 판독 Endpoint와 Route가 존재하지 않는다.}
+  - {id: AT-EMR-001, level: contract, requirement_ids: [FR-004], feature_ids: [fhir_api, emr_integration], assertion: FHIR Patient 조회가 EMR Connector 계약을 사용한다.}
+  - {id: AT-MOB-001, level: e2e, requirement_ids: [FR-002], feature_ids: [patient_mobile, patient_bff], assertion: 환자 사용자가 OIDC 인증 후 자신의 데이터를 조회한다.}
+  - {id: AT-MOB-002, level: integration, requirement_ids: [FR-002], feature_ids: [patient_notifications], assertion: 허용된 환자에게 알림 이벤트가 발행된다.}
+  - {id: AT-DEP-001, level: deployment, requirement_ids: [FR-001], feature_ids: [on_premise_deployment, kubernetes], assertion: 모든 Workload가 On Premise Namespace에 배포된다.}
+  - {id: AT-DEP-002, level: security, requirement_ids: [FR-001], feature_ids: [network_policy], assertion: 외부 AI Endpoint로의 Egress가 차단된다.}
+  - {id: AT-LIS-001, level: contract, requirement_ids: [FR-001], feature_ids: [lis_integration], assertion: LIS 검사 결과 메시지가 계약 Schema를 만족한다.}
+  - {id: AT-LIS-002, level: integration, requirement_ids: [FR-001], feature_ids: [lis_integration, emr_integration], assertion: 검사 결과가 환자 식별자와 함께 EMR로 전달된다.}
+  - {id: AT-SEC-001, level: security, requirement_ids: [], feature_ids: [phi_encryption], assertion: PHI 저장소와 전송 채널에 암호화가 강제된다.}
+  - {id: AT-SEC-002, level: policy, requirement_ids: [], feature_ids: [abac], assertion: 허용 속성이 없는 사용자의 민감 자원 접근이 거부된다.}
+  - {id: AT-DATA-001, level: policy, requirement_ids: [], feature_ids: [data_residency_kr], assertion: PHI 저장 위치가 승인된 국내 Region으로 제한된다.}
+  - {id: AT-TRACE-001, level: traceability, requirement_ids: [], feature_ids: [audit_logging], assertion: 필수 Requirement에서 Test와 Evidence까지 Trace가 연결된다.}
+  - {id: AT-UML-001, level: model, requirement_ids: [], feature_ids: [], assertion: 모든 UML Component가 componentId와 featureIds를 가진다.}
+  - {id: AT-UML-002, level: model, requirement_ids: [], feature_ids: [], assertion: UML 수정은 Solver 검증 전 Change Proposal 상태를 유지한다.}
+

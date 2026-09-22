@@ -1,0 +1,42 @@
+# generated-by: paispl.generated/v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lis
+  labels: &id001
+    app.kubernetes.io/name: lis
+    paispl/component-id: CMP-LIS
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: lis
+  template:
+    metadata:
+      labels: *id001
+    spec:
+      containers:
+      - name: lis
+        image: ghcr.io/paispl/lis:generated
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lis
+  labels:
+    app.kubernetes.io/name: lis
+    paispl/component-id: CMP-LIS
+spec:
+  selector:
+    app.kubernetes.io/name: lis
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http

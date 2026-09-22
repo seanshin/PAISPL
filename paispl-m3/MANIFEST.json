@@ -1,0 +1,12 @@
+{
+  "package": "PAISPL_M3_Incremental_Artifact_Factory_v0.3.0.zip",
+  "milestone": "M3",
+  "version": "0.3.0",
+  "contains": [
+    "M3 incremental artifact factory",
+    "M2 architecture synthesizer snapshot",
+    "M1 solver snapshot",
+    "Sprint 0 design snapshot"
+  ],
+  "file_count": 280
+}

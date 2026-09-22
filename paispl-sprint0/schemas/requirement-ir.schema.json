@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paispl.example/schemas/requirement-ir.schema.json",
+  "title": "PAISPL Requirement IR",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "request_id",
+    "domain",
+    "source_text",
+    "intents",
+    "functional_requirements",
+    "non_functional_requirements",
+    "constraints",
+    "deployment",
+    "data_classes",
+    "unresolved_questions",
+    "metadata"
+  ],
+  "properties": {
+    "version": { "const": "0.1.0" },
+    "request_id": { "type": "string", "pattern": "^[A-Z]+-[A-Z]+-[0-9]{3}$" },
+    "domain": { "const": "healthcare-platform" },
+    "source_text": { "type": "string", "minLength": 20 },
+    "base_configuration_id": { "type": ["string", "null"] },
+    "intents": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/intent" }
+    },
+    "functional_requirements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/requirement" }
+    },
+    "non_functional_requirements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nfr" }
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/requestConstraint" }
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile", "runtime"],
+      "properties": {
+        "profile": { "enum": ["cloud", "on_premise", "hybrid", "unchanged"] },
+        "runtime": { "enum": ["docker_compose", "kubernetes", "unchanged"] }
+      }
+    },
+    "data_classes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["public", "internal", "personal", "PHI", "credential", "model_output"] }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "question", "blocking"],
+        "properties": {
+          "id": { "type": "string" },
+          "question": { "type": "string" },
+          "blocking": { "type": "boolean" }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at", "producer", "model_id", "prompt_template_version"],
+      "properties": {
+        "created_at": { "type": "string", "format": "date-time" },
+        "producer": { "enum": ["human", "llm", "hybrid"] },
+        "model_id": { "type": "string" },
+        "prompt_template_version": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "operation", "subject", "feature_candidates", "confidence", "source_quote"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^INT-[0-9]{3}$" },
+        "operation": { "enum": ["include", "exclude", "prefer", "replace", "preserve"] },
+        "subject": { "type": "string", "minLength": 2 },
+        "feature_candidates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["feature_id", "score"],
+            "properties": {
+              "feature_id": { "type": "string" },
+              "score": { "type": "number", "minimum": 0, "maximum": 1 }
+            }
+          }
+        },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "source_quote": { "type": "string" }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "statement", "priority", "acceptance_test_ids"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^FR-[0-9]{3}$" },
+        "statement": { "type": "string" },
+        "priority": { "enum": ["must", "should", "could"] },
+        "acceptance_test_ids": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "nfr": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "statement", "measure"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^NFR-[0-9]{3}$" },
+        "category": { "enum": ["security", "privacy", "performance", "availability", "auditability", "maintainability"] },
+        "statement": { "type": "string" },
+        "measure": { "type": "string" }
+      }
+    },
+    "requestConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "expression", "hard"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^RC-[0-9]{3}$" },
+        "kind": { "enum": ["feature", "deployment", "data", "policy", "cost"] },
+        "expression": { "type": "string" },
+        "hard": { "type": "boolean" }
+      }
+    }
+  }
+}

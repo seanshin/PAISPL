@@ -1,0 +1,17 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-EMR
+  name: emr
+  generator: paispl.generated/v1
+spec:
+  componentType: adapter
+  featureIds:
+  - emr_integration
+  interfaceIds:
+  - API-EMR
+  dependencies:
+  - source: CMP-EMR
+    target: CMP-AUDIT
+    kind: event

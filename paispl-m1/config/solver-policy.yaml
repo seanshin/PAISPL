@@ -1,0 +1,16 @@
+policy_version: 0.1.0
+minimum_intent_confidence: 0.75
+default_features:
+  - rbac
+  - secret_manager
+  - data_residency_kr
+  - fhir_api
+  - distributed_tracing
+group_defaults:
+  deployment_profile: hybrid_deployment
+  runtime_profile: kubernetes
+  ai_model_profile: cloud_model
+conditional_group_defaults:
+  - when_selected: on_premise_deployment
+    group: ai_model_profile
+    member: local_model

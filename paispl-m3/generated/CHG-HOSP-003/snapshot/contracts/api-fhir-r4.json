@@ -1,0 +1,11 @@
+{
+  "_generator": "paispl.generated/v1",
+  "contractVersion": "0.3.0",
+  "featureIds": [
+    "fhir_api"
+  ],
+  "id": "API-FHIR-R4",
+  "implementationStatus": "stub_requires_domain_contract",
+  "ownerComponentId": "CMP-FHIR",
+  "protocolFamily": "http_or_domain_api"
+}

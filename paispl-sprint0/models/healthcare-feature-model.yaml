@@ -1,0 +1,82 @@
+model_version: 0.1.0
+product_line_id: paispl-healthcare-platform
+root: healthcare_platform
+features:
+  - {id: healthcare_platform, parent: null, kind: root}
+  - {id: identity, parent: healthcare_platform, kind: mandatory}
+  - {id: audit_logging, parent: healthcare_platform, kind: mandatory}
+  - {id: phi_encryption, parent: healthcare_platform, kind: mandatory}
+  - {id: monitoring, parent: healthcare_platform, kind: mandatory}
+  - {id: passwordless, parent: identity, kind: optional}
+  - {id: fido2, parent: identity, kind: optional}
+  - {id: mfa, parent: identity, kind: optional}
+  - {id: oauth2_oidc, parent: identity, kind: optional}
+  - {id: rbac, parent: identity, kind: optional}
+  - {id: abac, parent: identity, kind: optional}
+  - {id: zero_trust, parent: healthcare_platform, kind: optional}
+  - {id: network_policy, parent: healthcare_platform, kind: optional}
+  - {id: secret_manager, parent: healthcare_platform, kind: optional}
+  - {id: data_residency_kr, parent: healthcare_platform, kind: optional}
+  - {id: cloud_deployment, parent: healthcare_platform, kind: optional}
+  - {id: on_premise_deployment, parent: healthcare_platform, kind: optional}
+  - {id: hybrid_deployment, parent: healthcare_platform, kind: optional}
+  - {id: edge_gateway, parent: healthcare_platform, kind: optional}
+  - {id: docker_compose, parent: healthcare_platform, kind: optional}
+  - {id: kubernetes, parent: healthcare_platform, kind: optional}
+  - {id: emr_integration, parent: healthcare_platform, kind: optional}
+  - {id: fhir_api, parent: healthcare_platform, kind: optional}
+  - {id: his_integration, parent: healthcare_platform, kind: optional}
+  - {id: lis_integration, parent: healthcare_platform, kind: optional}
+  - {id: pacs_integration, parent: healthcare_platform, kind: optional}
+  - {id: dicom_gateway, parent: healthcare_platform, kind: optional}
+  - {id: mri_adapter, parent: healthcare_platform, kind: optional}
+  - {id: ct_adapter, parent: healthcare_platform, kind: optional}
+  - {id: clinical_ai_agent, parent: healthcare_platform, kind: optional}
+  - {id: ai_diagnosis, parent: clinical_ai_agent, kind: optional}
+  - {id: local_model, parent: clinical_ai_agent, kind: optional}
+  - {id: cloud_model, parent: clinical_ai_agent, kind: optional}
+  - {id: model_audit, parent: clinical_ai_agent, kind: optional}
+  - {id: patient_mobile, parent: healthcare_platform, kind: optional}
+  - {id: patient_bff, parent: patient_mobile, kind: optional}
+  - {id: patient_notifications, parent: patient_mobile, kind: optional}
+  - {id: distributed_tracing, parent: healthcare_platform, kind: optional}
+groups:
+  - id: deployment_profile
+    parent: healthcare_platform
+    cardinality: {min: 1, max: 1}
+    members: [cloud_deployment, on_premise_deployment, hybrid_deployment]
+  - id: runtime_profile
+    parent: healthcare_platform
+    cardinality: {min: 1, max: 1}
+    members: [docker_compose, kubernetes]
+  - id: ai_model_profile
+    parent: clinical_ai_agent
+    cardinality: {min: 1, max: 1}
+    members: [local_model, cloud_model]
+constraints:
+  - {id: C-001, type: requires, source: passwordless, target: mfa}
+  - {id: C-002, type: requires, source: passwordless, target: fido2}
+  - {id: C-003, type: requires, source: mfa, target: identity}
+  - {id: C-004, type: requires, source: rbac, target: identity}
+  - {id: C-005, type: requires, source: abac, target: identity}
+  - {id: C-006, type: requires, source: oauth2_oidc, target: identity}
+  - {id: C-007, type: requires, source: zero_trust, target: mfa}
+  - {id: C-008, type: requires, source: zero_trust, target: network_policy}
+  - {id: C-009, type: requires, source: hybrid_deployment, target: edge_gateway}
+  - {id: C-010, type: requires, source: on_premise_deployment, target: edge_gateway}
+  - {id: C-011, type: requires, source: fhir_api, target: emr_integration}
+  - {id: C-012, type: requires, source: lis_integration, target: emr_integration}
+  - {id: C-013, type: requires, source: pacs_integration, target: dicom_gateway}
+  - {id: C-014, type: requires, source: mri_adapter, target: dicom_gateway}
+  - {id: C-015, type: requires, source: ct_adapter, target: dicom_gateway}
+  - {id: C-016, type: requires, source: clinical_ai_agent, target: model_audit}
+  - {id: C-017, type: requires, source: clinical_ai_agent, target: phi_encryption}
+  - {id: C-018, type: requires, source: ai_diagnosis, target: clinical_ai_agent}
+  - {id: C-019, type: requires, source: ai_diagnosis, target: pacs_integration}
+  - {id: C-020, type: requires, source: local_model, target: clinical_ai_agent}
+  - {id: C-021, type: requires, source: cloud_model, target: clinical_ai_agent}
+  - {id: C-022, type: excludes, source: on_premise_deployment, target: cloud_model}
+  - {id: C-023, type: requires, source: patient_mobile, target: patient_bff}
+  - {id: C-024, type: requires, source: patient_bff, target: oauth2_oidc}
+  - {id: C-025, type: requires, source: patient_bff, target: fhir_api}
+

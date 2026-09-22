@@ -1,0 +1,86 @@
+architecture_version: 0.1.0
+architecture_id: ARCH-HEALTHCARE-REFERENCE
+components:
+  - id: CMP-IDENTITY
+    name: Identity Service
+    type: service
+    realizes: [identity, passwordless, fido2, mfa, oauth2_oidc, rbac, abac]
+    interfaces: [API-OIDC, API-WEBAUTHN]
+  - id: CMP-POLICY
+    name: Policy Enforcement Service
+    type: service
+    realizes: [zero_trust, network_policy, data_residency_kr]
+    interfaces: [API-POLICY-CHECK]
+  - id: CMP-AUDIT
+    name: Audit Service
+    type: service
+    realizes: [audit_logging, model_audit]
+    interfaces: [EVT-AUDIT]
+  - id: CMP-EMR
+    name: EMR Connector
+    type: adapter
+    realizes: [emr_integration, his_integration]
+    interfaces: [API-EMR]
+  - id: CMP-FHIR
+    name: FHIR Gateway
+    type: gateway
+    realizes: [fhir_api]
+    interfaces: [API-FHIR-R4]
+  - id: CMP-LIS
+    name: LIS Connector
+    type: adapter
+    realizes: [lis_integration]
+    interfaces: [API-LIS]
+  - id: CMP-DICOM-GW
+    name: DICOM Gateway
+    type: gateway
+    realizes: [pacs_integration, dicom_gateway, mri_adapter, ct_adapter]
+    interfaces: [API-DICOM-STOW, API-DICOM-QIDO]
+  - id: CMP-CLINICAL-AI
+    name: Clinical AI Service
+    type: service
+    realizes: [clinical_ai_agent, ai_diagnosis, local_model, cloud_model]
+    interfaces: [API-AI-INFER, EVT-AI-AUDIT]
+  - id: CMP-PATIENT-BFF
+    name: Patient BFF
+    type: service
+    realizes: [patient_mobile, patient_bff, patient_notifications]
+    interfaces: [API-PATIENT, EVT-PATIENT-NOTIFY]
+  - id: CMP-OBSERVABILITY
+    name: Observability Stack
+    type: platform
+    realizes: [monitoring, distributed_tracing]
+    interfaces: [OTEL-EXPORT]
+  - id: CMP-DEPLOYMENT
+    name: Deployment Profile
+    type: infrastructure
+    realizes: [cloud_deployment, on_premise_deployment, hybrid_deployment, edge_gateway, docker_compose, kubernetes, secret_manager, phi_encryption]
+    interfaces: [DEPLOY-MANIFEST]
+dependencies:
+  - {source: CMP-PATIENT-BFF, target: CMP-IDENTITY, kind: api}
+  - {source: CMP-PATIENT-BFF, target: CMP-FHIR, kind: api}
+  - {source: CMP-FHIR, target: CMP-EMR, kind: api}
+  - {source: CMP-LIS, target: CMP-EMR, kind: api}
+  - {source: CMP-CLINICAL-AI, target: CMP-DICOM-GW, kind: api}
+  - {source: CMP-CLINICAL-AI, target: CMP-AUDIT, kind: event}
+  - {source: CMP-IDENTITY, target: CMP-POLICY, kind: policy}
+  - {source: CMP-PATIENT-BFF, target: CMP-AUDIT, kind: event}
+  - {source: CMP-DICOM-GW, target: CMP-AUDIT, kind: event}
+  - {source: CMP-EMR, target: CMP-AUDIT, kind: event}
+  - {source: CMP-CLINICAL-AI, target: CMP-DEPLOYMENT, kind: deployment}
+  - {source: CMP-PATIENT-BFF, target: CMP-DEPLOYMENT, kind: deployment}
+  - {source: CMP-OBSERVABILITY, target: CMP-DEPLOYMENT, kind: deployment}
+expected_impacts:
+  CHG-HOSP-001:
+    add_or_modify: [CMP-PATIENT-BFF, CMP-IDENTITY, CMP-FHIR, CMP-AUDIT]
+    remove_or_disable: [CMP-CLINICAL-AI]
+    preserve: [CMP-DICOM-GW, CMP-EMR]
+  CHG-HOSP-002:
+    add_or_modify: [CMP-DEPLOYMENT, CMP-CLINICAL-AI, CMP-POLICY]
+    remove_or_disable: []
+    preserve: [CMP-DICOM-GW, CMP-EMR, CMP-PATIENT-BFF]
+  CHG-HOSP-003:
+    add_or_modify: [CMP-LIS, CMP-EMR, CMP-IDENTITY, CMP-POLICY, CMP-AUDIT]
+    remove_or_disable: []
+    preserve: [CMP-DICOM-GW, CMP-PATIENT-BFF]
+

@@ -1,0 +1,23 @@
+@startuml
+title PAISPL M4 Change Proposal Lifecycle
+state DRAFT
+state PENDING_VALIDATION
+state VALIDATED
+state PENDING_APPROVAL
+state APPROVED
+state REJECTED
+state APPLIED
+DRAFT --> PENDING_VALIDATION : validate
+proposalId
+PENDING_VALIDATION --> VALIDATED : Requirement IR + Solver PASS
+PENDING_VALIDATION --> REJECTED : stale, unmapped, unresolved, unsatisfiable
+VALIDATED --> PENDING_APPROVAL : preview only
+configurationHash + architectureHash
+PENDING_APPROVAL --> APPROVED : explicit approvalId + proposalHash
+PENDING_APPROVAL --> REJECTED : explicit rejection
+APPROVED --> APPLIED : manifest-owned materialization
+note bottom
+roundTripGuard=UML edits never bypass Requirement IR, Solver validation, and explicit approval.
+semanticIds=proposalId,approvalId,featureId,componentId,interfaceId,testId,artifactPath
+end note
+@enduml

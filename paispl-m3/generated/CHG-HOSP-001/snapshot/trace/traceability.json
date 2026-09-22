@@ -1,0 +1,71 @@
+{
+  "_generator": "paispl.generated/v1",
+  "configurationId": "CFG-CHG-HOSP-001",
+  "links": [
+    {
+      "artifactPaths": [
+        "components/clinical-ai/app.py",
+        "components/clinical-ai/component.yaml",
+        "contracts/api-ai-infer.json",
+        "contracts/evt-ai-audit.json",
+        "deploy/k8s/clinical-ai.yaml"
+      ],
+      "componentId": "CMP-CLINICAL-AI",
+      "featureId": "ai_diagnosis",
+      "intentId": "INT-001",
+      "interfaceIds": [
+        "API-AI-INFER",
+        "EVT-AI-AUDIT"
+      ],
+      "operation": "exclude",
+      "sourceQuote": "AI 판독 기능은 제외",
+      "testIds": [
+        "AT-AI-001",
+        "AT-AI-003"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/patient-bff/app.py",
+        "components/patient-bff/component.yaml",
+        "contracts/api-patient.json",
+        "contracts/evt-patient-notify.json",
+        "deploy/k8s/patient-bff.yaml"
+      ],
+      "componentId": "CMP-PATIENT-BFF",
+      "featureId": "patient_mobile",
+      "intentId": "INT-002",
+      "interfaceIds": [
+        "API-PATIENT",
+        "EVT-PATIENT-NOTIFY"
+      ],
+      "operation": "include",
+      "sourceQuote": "환자용 모바일 서비스를 추가",
+      "testIds": [
+        "AT-MOB-001"
+      ]
+    },
+    {
+      "artifactPaths": [
+        "components/patient-bff/app.py",
+        "components/patient-bff/component.yaml",
+        "contracts/api-patient.json",
+        "contracts/evt-patient-notify.json",
+        "deploy/k8s/patient-bff.yaml"
+      ],
+      "componentId": "CMP-PATIENT-BFF",
+      "featureId": "patient_notifications",
+      "intentId": "INT-003",
+      "interfaceIds": [
+        "API-PATIENT",
+        "EVT-PATIENT-NOTIFY"
+      ],
+      "operation": "include",
+      "sourceQuote": "알림을 추가",
+      "testIds": [
+        "AT-MOB-002"
+      ]
+    }
+  ],
+  "requestId": "CHG-HOSP-001"
+}

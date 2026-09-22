@@ -1,0 +1,11 @@
+{
+  "package": "PAISPL_M2_Architecture_Synthesizer_v0.2.0.zip",
+  "milestone": "M2",
+  "version": "0.2.0",
+  "contains": [
+    "M2 implementation",
+    "M1 implementation snapshot",
+    "Sprint 0 design snapshot"
+  ],
+  "file_count": 75
+}

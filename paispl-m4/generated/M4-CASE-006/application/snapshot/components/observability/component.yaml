@@ -1,0 +1,18 @@
+# generated-by: paispl.generated/v1
+apiVersion: paispl.openai.com/v1alpha1
+kind: GeneratedComponent
+metadata:
+  id: CMP-OBSERVABILITY
+  name: observability
+  generator: paispl.generated/v1
+spec:
+  componentType: platform
+  featureIds:
+  - distributed_tracing
+  - monitoring
+  interfaceIds:
+  - OTEL-EXPORT
+  dependencies:
+  - source: CMP-OBSERVABILITY
+    target: CMP-DEPLOYMENT
+    kind: deployment

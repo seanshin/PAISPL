@@ -1,0 +1,42 @@
+# generated-by: paispl.generated/v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audit
+  labels: &id001
+    app.kubernetes.io/name: audit
+    paispl/component-id: CMP-AUDIT
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: audit
+  template:
+    metadata:
+      labels: *id001
+    spec:
+      containers:
+      - name: audit
+        image: ghcr.io/paispl/audit:generated
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit
+  labels:
+    app.kubernetes.io/name: audit
+    paispl/component-id: CMP-AUDIT
+spec:
+  selector:
+    app.kubernetes.io/name: audit
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http
